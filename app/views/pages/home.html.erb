@@ -1,2 +1,6 @@
 <h1>Recyclable</h1>
 <p>We are here to help you recycle!</p>
+<p><%= link_to "Sign up", new_user_registration_path %></p>
+<p><%= link_to "Sign in", new_user_session_path %></p>
+<p><%= link_to "Log out", destroy_user_session_path, method: :delete %></p>
+<p><%= link_to "Search item", products_path %></p>
