@@ -1,19 +1,19 @@
-
 <div class="container">
-
-
-
-
 
   <h2>Product name: <%= @product.name %></h2>
   <h3>Category: <%= @product.category %></h3>
-  <h3>Material: <%= @material&.category %></h3>
 
   <% if @product.photo.attached? %>
     <%= cl_image_tag @product.photo.key, height: 300, width: 300, crop: :fill %>
   <% end %>
-  <div>
-    <p><%= link_to "Delete",  product_path(@product), method: :delete %> <%= link_to"create new", new_product_path(@product) %>
 
+  <div>
+    <% if @product&.fully_recyclability? %>
+        <p>Great news! This piece of packaging is made of <%= @material&.category %> and can be recycled. Please put it into your recycling bin!</p>
+    <% else %>
+        <p>Unfortunately, this piece of packaging cannot be recycled yet. Please put it in the general waste bin.</p>
+        <p>Would you like to buy more sustainable products in the future? <strong><%= link_to "We found these alternatives for you!", products_path %></strong></p>
+    <% end %>
   </div>
+
 </div>
