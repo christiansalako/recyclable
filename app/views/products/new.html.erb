@@ -1,5 +1,13 @@
-<%= simple_form_for(@product) do |f| %>
+<div class="container">
+<%= simple_form_for [@product] do |f| %>
   <%= f.input :name %>
   <%= f.input :category %>
+  <%= f.input :photo %>
+  <%= f.fields_for Material.new do |a| %>
+    <%= a.input :category %>
+    <%= a.input :recyclability %>
+  <% end %>
   <%= f.submit %>
 <% end %>
+
+</div>
