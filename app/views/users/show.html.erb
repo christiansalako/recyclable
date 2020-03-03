@@ -1,0 +1,5 @@
+<% if current_user.producer? %>
+    <%= render "producer" %>
+<% else %>
+    <%= render "consumer" %>
+<% end %>
