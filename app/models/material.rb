@@ -1,5 +1,5 @@
 class Material < ApplicationRecord
-  belongs_to :product, foreign_key: 'products_id'
+  has_many :product_materials
+  has_many :products, through: :product_materials
   validates :category, presence: true
-  validates :recyclability, presence: true
 end
