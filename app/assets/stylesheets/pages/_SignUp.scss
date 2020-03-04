@@ -5,23 +5,39 @@ h2{
 }
 
 .form-inputs{
-  border: 20px;
-  padding-top: 20px;
+  border-radius: 20px;
   padding-top: 20px;
   padding-left: 50px;
-  padding-right: 50px;
-  border: 20px yellow;
-
+  padding-right: 10px;
+  background-color: #FFC739;
+  margin: 20px;
 }
 
 .form-actions{
-text-align: center;
-background: #4BC999;
+position: absolute;
+width: 202px;
+height: 47px;
+left: 79px;
+top: 433px;
 color: white;
-border-style: outset;
-border-color: black;
-height: 50px;
-width: 100px;
-font: bold 15px arial, sans-serif;
-text-shadow:none;
+background: linear-gradient(90deg, #4BC999 0%, #1E3E29 100%);
+border-radius: 20px;
+margin-top: 20px;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+text-align: center;
+
+color: #FFFFFF;
+}
+
+.btn{
+  color:white;
+  padding-top: 10px;
+}
+
+.form-control{
+  width:250px;
 }
