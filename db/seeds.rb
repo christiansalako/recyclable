@@ -1,3 +1,4 @@
+
 puts "deleting old data"
 Material.destroy_all
 Product.destroy_all
@@ -42,3 +43,4 @@ end
 puts "Happy days"
 #Product.create(name: "Amy's Kitchen Hearty Spanish Rice & Red Bean Soup", category: "Soup")
 #Product.create(name: "Biona Organic Spiced Pumpkin Soup", category: "Soup")
+
