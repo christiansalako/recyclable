@@ -21,11 +21,16 @@ end
 
 puts "creating products"
 #Product.create(user_id: default.id, )
-products = [{category: "soup" , descriptions: [{name: "Biona Organic Spiced Pumpkin Soup"}, {name: "Biona Organic Hearty Lentil Soup"}, {name: "Amy's Kitchen Hearty Spanish Rice & Red Bean Soup"}, {name: "Heinz Classic Carrot & Coriander Soup"}, {name: "Heinz Spring Vegetable Soup"}, {name: "Essential Waitrose Vegetable Soup"}, {name: "Baxters Vegetarian Carrot & Butterbean Soup"}]}]
+products = [{category: "soup" , descriptions: [{name: "Biona Organic Spiced Pumpkin Soup"}, {name: "Biona Organic Hearty Lentil Soup"}, {name: "Amy's Kitchen Hearty Spanish Rice & Red Bean Soup"}, {name: "Heinz Classic Carrot & Coriander Soup"}, {name: "Heinz Spring Vegetable Soup"}, {name: "Essential Waitrose Vegetable Soup"}, {name: "Baxters Vegetarian Carrot & Butterbean Soup"}]},
+{category: "soft drinks" , descriptions: [{name: "Coca-Cola"}, {name: "Schweppes Lemonade"}, {name: "Fanta Orange"}, {name: "Lucozade Energy Original"}, {name: "Innocent Orange Juice"}, {name: "Waitrose Chilled Smooth Orange Juice"}, {name: "Tropicana Whole Fruit Orange"}]},
+{category: "cereals" , descriptions: [{name: "Mornflake Pure Organic Oats"}, {name: "Quaker Oats Jumbo Rolled Oats Porridge"}, {name: "Scott's Porage Original Porridge Oats "}, {name: "Flahavan's Organic Jumbo Oats"}, {name: "Essential Waitrose Porridge Oats With Wheatbran"}, {name: "Tree of Life Organic Porridge Oats"}, {name: "Essential Waitrose Porridge Oats"}]},
+{category: "chocolate and sweets" , descriptions: [{name: "Cadbury Mini Eggs Bag"}, {name: "Cadbury Dairy Milk Whole Nut"}, {name: "Snickers"}, {name: "Mars"}, {name: "Bounty"}, {name: "M&Ms"}, {name: "KitKat"}]}]
 
 products.each do |product|
     product[:descriptions].each do |description|
-        Product.create(category: product[:category], name: description[:name], user_id: default.id)
+       # last_product = 
+       Product.create(category: product[:category], name: description[:name], user_id: default.id)
+        #last_product.photo.attach(io:)
     end
 end  
 
@@ -35,6 +40,10 @@ Product.all.each_with_index do |product, index|
             material = Material.where(name: "Clear glass bottle")[0]
         when 2..6
             material = Material.where(name: "Food tins")[0]
+        when 7..13
+            material = Material.where(name: "PET")[0]    
+        when 14..17
+            material = Material.where(name: "Cardboard")[0]   
         else
             material = Material.where(name: "others")[0]
     end
