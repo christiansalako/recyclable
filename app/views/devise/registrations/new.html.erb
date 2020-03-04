@@ -1,6 +1,8 @@
 <div style="background-image: url(<%= image_path 'sign_in.jpg' %>); background-size: cover; background-position: center; height: 100vh">
   <h2>Sign up</h2>
 
+  <%= link_to "back", new_user_session_path %>
+
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
@@ -26,5 +28,3 @@
     </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
-</div>
