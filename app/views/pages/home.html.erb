@@ -1,4 +1,11 @@
-<h1>Recyclable</h1>
-<p>We are here to help you recycle!</p>
-<p><%= link_to "Sign up", new_user_registration_path %></p>
-<p><%= link_to "Sign in", new_user_session_path %></p>
+<div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >
+
+  <img src="/assets/main-logo.png" class="mainlogo">
+  <div class="intro">
+    Recycable helps the user to identify if a specific piece of packaging / clothes / electronics can be recycled depending on their postcode.
+  </div>
+  <div class="buttons-wrapper">
+    <%= link_to "Sign up", new_user_registration_path, class: "btn sign-up-btn"%>
+    <%= link_to "Sign in", new_user_session_path, class: "btn sign-in-btn" %>
+  </div>
+</div>
