@@ -1,1 +1,74 @@
 // Specific CSS for your home-page
+
+
+// font-family: Reem Kufi;
+// color: #2A422C;
+// background-color: #4BC999;
+.main-container {
+  height: 100vh;
+      overflow-x: hidden;
+}
+
+.sign-up-btn {
+  color: #2A422C;
+  position: absolute;
+width: 288px;
+height: 47px;
+left: 41px;
+top: 397px;
+background: linear-gradient(90deg, #4BC999 99.99%, #1E3E29 100%);
+border-radius: 20px;
+color:white;
+padding-top: 10px;
+}
+
+.sign-in-btn {
+  position: absolute;
+width: 288px;
+height: 47px;
+left: 41px;
+top: 467px;
+background: linear-gradient(90deg, #FFC739 74.73%, #FFC739 99.99%, #234830 100%);
+border-radius: 20px;
+color: white;
+padding-top: 10px;
+
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 170px;
+}
+
+.mainlogo{
+  width: 100%;
+  object-fit: cover;
+  margin-top: 90px;
+  margin-left: 10px;
+  padding: 10px;
+}
+
+.sign-in-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.intro{
+margin-top: 30px;
+position: absolute;
+width: 302px;
+height: 119px;
+left: 27px;
+top: 218px;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 27px;
+display: flex;
+align-items: center;
+text-align: center;
+}
+

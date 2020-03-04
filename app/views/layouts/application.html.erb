@@ -9,13 +9,16 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-  <body>
-  
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    
-    <%= yield %>
+  <body style="background-color:#F9F7E8;">
+    <div class="main-container">
+      <% if !params[:action] == 'home' %>
+        <%= render 'shared/navbar' %>
+      <% end %>
+      <%= render 'shared/flashes' %>
 
-    <%= javascript_pack_tag 'application' %>
+      <%= yield %>
+
+      <%= javascript_pack_tag 'application' %>
+    </div>
   </body>
 </html>
