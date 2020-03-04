@@ -1,4 +1,4 @@
-
+require "open-uri"
 puts "deleting old data"
 Material.destroy_all
 Product.destroy_all
@@ -27,12 +27,18 @@ products = [{category: "soup" , descriptions: [{name: "Biona Organic Spiced Pump
 {category: "chocolate and sweets" , descriptions: [{name: "Cadbury Mini Eggs Bag"}, {name: "Cadbury Dairy Milk Whole Nut"}, {name: "Snickers"}, {name: "Mars"}, {name: "Bounty"}, {name: "M&Ms"}, {name: "KitKat"}]}]
 
 products.each do |product|
-    product[:descriptions].each do |description|
-       # last_product = 
-       Product.create(category: product[:category], name: description[:name], user_id: default.id)
-        #last_product.photo.attach(io:)
+   product[:descriptions].each do |description|
+     Product.create(category: product[:category], name: description[:name], user_id: default.id)
     end
 end  
+
+# products.each do |product|
+#     product[:descriptions].each do |description|
+#        last_product = Product.create(category: products[0][:category], name: products[0][:description][0][:name], user_id: default.id)
+#        file = URI.open(products[0][:description][0][:photo]) 
+#        last_product.photo.attach(io: file, filename: 'img1.png', content_type: 'image/png')
+#     end
+# end  
 
 Product.all.each_with_index do |product, index|
     case index
@@ -50,6 +56,3 @@ Product.all.each_with_index do |product, index|
     ProductMaterial.create(product_id: product.id, material_id: material.id)
 end
 puts "Happy days"
-#Product.create(name: "Amy's Kitchen Hearty Spanish Rice & Red Bean Soup", category: "Soup")
-#Product.create(name: "Biona Organic Spiced Pumpkin Soup", category: "Soup")
-
