@@ -2,12 +2,9 @@
 
 <%= simple_form_for [@product] do |f| %>
   <%= f.input :name %>
-  <%= f.input :category %>
+  <%= f.input :category, collection: ['chocolate', 'rice', 'pizza'] %>
   <%= f.input :photo %>
-  <%= f.fields_for Material.new do |a| %>
-    <%= a.input :category %>
-    <%= a.input :recyclability %>
-  <% end %>
+  <%= f.association :materials, multiple: true %>
   <%= f.submit %>
 <% end %>
 
