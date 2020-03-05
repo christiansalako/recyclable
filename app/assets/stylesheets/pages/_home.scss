@@ -109,7 +109,85 @@ justify-content: center;
   color:purple;
   margin-left: 50px;
   padding-top: 10px;
-      display: inline;
+  display: inline;
   text-align: center;
 }
 
+h5{
+  text-align:center;
+}
+
+.consumer-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.consumerheading{
+  color: black;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 10px;
+    background-color: #f99d2b;
+    border-radius: 20px 20px 0 0;
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    bottom: -1px;
+}
+
+
+.form-control{
+  text-align: center;
+  padding-left: 10px;
+  color: purple;
+  margin:auto 10%;
+  border-radius: 20px;
+
+
+}
+
+.youritem{
+  padding-top:10px;
+  padding-left:15px;
+  padding-bottom:0px;
+  padding-right:15px;
+}
+
+.youritembtn{
+  padding: 16px;
+}
+
+.btn{
+  background-color:#4BC999;
+  border-radius: 20px;
+}
+
+.background3{
+  background-color:#FFC739;
+  border-radius: 20px;
+  padding-top: 30px;
+  text-align: center;
+  margin-left: 14px;
+  margin-right: 14px;
+}
+
+
+.textbox{
+  border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 30px;
+    text-align: center;
+    font-size: 20px;
+    color: #464646;
+}
+
+.mainlogo2{
+  width: 100%;
+  object-fit: cover;
+  padding: 10px;
+  margin-bottom: 540px;
+  margin-right: -377px;
+}

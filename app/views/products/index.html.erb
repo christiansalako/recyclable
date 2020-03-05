@@ -1,11 +1,11 @@
 <div class="container">
 
-  <h1> <%= @products.count %> Results found</h1>
+  <h1> <%= @products.count %> We've found something for you!</h1>
 
   <% @products.each do |product| %>
       <p><%= link_to product.name, product_path(product) %></p>
   <% end %>
 
-  <h5><%=link_to "make another search", user_path(current_user)%></h5>
+  <h5><%=link_to "Search more", user_path(current_user)%></h5>
 
 </div>
