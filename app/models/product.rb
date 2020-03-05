@@ -6,8 +6,12 @@ class Product < ApplicationRecord
   validates :category, presence: true
   has_one_attached :photo
 
-  def fully_recyclability?
-    array = materials.map(&:recyclability).uniq
-    array.size == 1 && array.first ? true : false
+  def fully_recyclability
+    array = materials.map(&:recyclability)
+    return 100 if array.uniq.size == 1 && array.first
+    
+    count_recyclable = array.count(true)
+    percentage = (count_recyclable.to_f / array.size) * 100
+    return percentage
   end
 end
