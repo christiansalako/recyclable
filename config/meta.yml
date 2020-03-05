@@ -1,0 +1,5 @@
+meta_product_name: "Recyclable"
+meta_title: "Recyclable - Helping you recycle bette"
+meta_description: "We tell you instantly whether an item is recyclable or not"
+meta_image: "main-logo.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
