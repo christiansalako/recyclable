@@ -45,6 +45,13 @@ class ProductsController < ApplicationController
       redirect_to products_path
     end
 
+    def alternatives
+
+      @product = Product.find(params[:id])
+      @alternatives = Product.where(category: @product.category).joins(:materials).merge(Material.where(recyclability: true))
+
+    end
+
     def product_params
       params.require(:product).permit(:name, :category, :photo, material_ids: [])
     end

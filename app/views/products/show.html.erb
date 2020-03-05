@@ -13,7 +13,7 @@
         <p>Great news! This piece of packaging is made of <%= @material&.category %> and can be recycled. Please put it into your recycling bin!</p>
     <% else %>
         <p>Unfortunately, this piece of packaging cannot be recycled yet. Please put it in the general waste bin.</p>
-        <p>Would you like to buy more sustainable products in the future? <strong><%= link_to "We found these alternatives for you!", products_path %></strong></p>
+        <p>Would you like to buy more sustainable products in the future? <strong><%= link_to "We found these alternatives for you!", alternatives_product_path(@product) %></strong></p>
     <% end %>
 
     <%= link_to "back to results", products_path %>
