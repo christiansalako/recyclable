@@ -3,7 +3,7 @@
   <h1> <%= @products.count %> We've found something for you!</h1>
 
   <% @products.each do |product| %>
-      <p><%= link_to product.name, product_path(product) %></p>
+    <p><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %><%= link_to product.name, product_path(product) %></p>
   <% end %>
 
   <h5><%=link_to "Search more", user_path(current_user)%></h5>
