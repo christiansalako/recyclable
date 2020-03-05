@@ -3,9 +3,8 @@
   <h2>Product name: <%= @product.name %></h2>
   <h3>Category: <%= @product.category %></h3>
 
-
   <% if @product.photo.attached? %>
-    <%= cl_image_tag @product.photo.key, height: 300, width: 300, crop: :fill %>
+    <%= cl_image_tag @product.photo.key, height: 150, width: 150, crop: :fill %>
   <% end %>
 
   <div>
