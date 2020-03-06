@@ -48,7 +48,8 @@ class ProductsController < ApplicationController
     def alternatives
 
       @product = Product.find(params[:id])
-      @alternatives = Product.where(category: @product.category).joins(:materials).merge(Material.where(recyclability: true))
+      results = Product.where(category: @product.category).joins(:materials).merge(Material.where(recyclability: true))
+      @alternatives = results.select { |alternative| alternative.fully_recyclability == 100 }
 
     end
 

@@ -24,7 +24,7 @@
           <%end%>
           </ul>
         <p> It's not recyclable! Please put it in your general waste bin.</p>
-        <p>TIP! Buy more sustainable products in the future <strong><%= link_to "We found these alternatives for you!", products_path %></strong></p>
+        <p>TIP! Buy more sustainable products in the future <strong><%= link_to "We found these alternatives for you!", alternatives_product_path(@product) %></strong></p>
     <% else %>
 
         <% recyclable_materials = @materials.select {|material| material.recyclability}  %>
@@ -45,7 +45,7 @@
             <li> <%= material.name%></li>
             <%end%>
             </ul>
-          <p>TIP! Buy more sustainable products in the future <strong><%= link_to "We found these alternatives for you!", products_path %></strong></p>
+          <p>TIP! Buy more sustainable products in the future <strong><%= link_to "We found these alternatives for you!", alternatives_product_path(@product) %></strong></p>
 
     <% end %>
 
