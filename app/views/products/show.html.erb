@@ -26,6 +26,7 @@
         <p> It's not recyclable! Please put it in your general waste bin.</p>
         <p>TIP! Buy more sustainable products in the future <strong><%= link_to "We found these alternatives for you!", products_path %></strong></p>
     <% else %>
+
         <% recyclable_materials = @materials.select {|material| material.recyclability}  %>
         <% not_recyclable_materials = @materials - recyclable_materials %>
         <p>This packaging is made up of different materials. Before putting it into the bin, let's separate the components!</p>
@@ -45,6 +46,7 @@
             <%end%>
             </ul>
           <p>TIP! Buy more sustainable products in the future <strong><%= link_to "We found these alternatives for you!", products_path %></strong></p>
+
     <% end %>
 
     <%= link_to "back to results", products_path %>

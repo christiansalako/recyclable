@@ -1,0 +1,10 @@
+
+<div class="container">
+  <h1>Alternative page</h1>
+  <ol>
+  <%@alternatives.each do |alternative| %>
+  <li><%= alternative.name %></li>
+  <% end %>
+  <%= link_to "back to results", product_path(@product) %>
+  </ol>
+</div>
