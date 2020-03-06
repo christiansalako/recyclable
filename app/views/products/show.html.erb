@@ -26,7 +26,7 @@
         <p>Sorry! The packaging is made of</p>
           <ul>
           <% @materials.each do |material|%>
-          <li><%= material.name %></li>
+          <p class="materialname"><%= material.name %></p>
           <%end%>
           </ul>
         <p> It's not recyclable! Please put it in your general waste bin.</p>
@@ -34,20 +34,20 @@
     <% else %>
         <% recyclable_materials = @materials.select {|material| material.recyclability}  %>
         <% not_recyclable_materials = @materials - recyclable_materials %>
+        
         <p>This packaging is made up of different materials. Before putting it into the bin, let's separate the components!</p>
-
           <% if recyclable_materials.any?%>
           <p>Recyclable material in your product:</p>
           <ul>
             <% recyclable_materials.each do |material|%>
-            <li> <%= material.name%></li>
+            <p class="materialname"><%= material.name%></p>
             <%end%>
             </ul>
           <%end%>
           <p>Non recyclable material in your product:</p>
           <ul>
             <% not_recyclable_materials.each do |material|%>
-            <li> <%= material.name%></li>
+            <p class="materialname"><%= material.name%></p>
             <%end%>
             </ul>
           <p>TIP! Buy more sustainable products in the future <strong><%= link_to "We found these alternatives for you!", alternatives_product_path(@product) %></strong></p>
