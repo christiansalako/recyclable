@@ -1,58 +1,63 @@
-h2{
-  text-align: center;
-  font-family: georgia;
-  font-size: 20px;
-  padding-top: 20px;
-  text-shadow: 1px 1px black;
+.sign-up {
+  h2{
+    text-align: center;
+padding-top: 57px;
+font-style: normal;
+font-weight: bold;
+font-size: 28px;
+line-height: 21px;
+text-align: center;
+font-family: Reem Kufi;
+  }
+
+
+
+  .form-inputs{
+    border-radius: 20px;
+    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-left: 50px;
+    padding-right: 10px;
+    background-color: #FFC739;
+    margin: 20px;
+  }
+
+  .form-actions{
+    position: absolute;
+    width: 202px;
+    height: 47px;
+    left: 79px;
+    top: 433px;
+    color: white;
+    background: linear-gradient(90deg, #4BC999 0%, #1E3E29 100%);
+    border-radius: 20px;
+    margin-top: 70px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    margin-top: 120px;
+    margin-left: 20px;
+    color: #FFFFFF;
+  }
+
+  .btn{
+    color:white;
+  }
+
+  .form-control{
+    width:250px;
+  }
 }
 
 .backbtn {
-  color: white;
-  background-color: #4BC999;
-  margin: 20px;
-  position: static;
-  border: 10px;
-  color: black;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-.form-inputs{
-  border-radius: 20px;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-left: 50px;
-  padding-right: 10px;
-  background-color: #FFC739;
-  margin: 20px;
-}
-
-.form-actions{
-position: absolute;
-width: 202px;
-height: 47px;
-left: 79px;
-top: 433px;
-color: white;
-background: linear-gradient(90deg, #4BC999 0%, #1E3E29 100%);
-border-radius: 20px;
-margin-top: 20px;
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-line-height: 23px;
-text-align: center;
-margin-top: 30px;
-margin-left: 20px;
-
-color: #FFFFFF;
-}
-
-.btn{
-  color:white;
-}
-
-.form-control{
-  width:250px;
-}
+    color: white;
+    background-color: #4BC999;
+    margin: 20px;
+    position: static;
+    border: 10px;
+    border-radius: 10px;
+    padding: 5px;
+  }
