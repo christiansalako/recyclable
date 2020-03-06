@@ -1,11 +1,10 @@
 
 
-<div style="background-image: url(<%=  asset_path('signin.png') %>); background-size: cover; background-position: center; height: 100vh;" >
+<div class="sign-in" style="background-image: url(<%=  asset_path('signin.png') %>); background-size: cover; background-position: center; height: 100vh; display: flex; flex-direction: column; justify-content: center;" >
 
-<h2>Sign in</h2>
-]
-
+  <div class="dh2">
   <h2>Log in</h2>
+</div>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
@@ -23,7 +22,7 @@
       <%= f.button :submit, "Log in" %>
     </div>
   <% end %>
-<div class="container">
-  <%= render "devise/shared/links" %>
-
+  <div class="container">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>
