@@ -1,4 +1,7 @@
 <div style="background-image: url(<%= image_path 'sign_in.jpg' %>); background-size: cover; background-position: center; height: 100vh">
+  <div class="uselessback">
+  <p>back</p>
+  </div>
 <div class="container">
 
    <div class="heading5">
@@ -14,9 +17,8 @@
   <% end %>
 
 
-  <h5><%=link_to "make another search", user_path(current_user), class: 'make_another_search' %></h5>
+</div>
+  <h5><%=link_to "make another search", user_path(current_user), id: "make_another_search" %></h5>
 
 </div>
-
-
 
