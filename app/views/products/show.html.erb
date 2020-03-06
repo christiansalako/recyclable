@@ -1,7 +1,6 @@
 <div class="container">
 
-  <h2>Product name: <%= @product.name %></h2>
-  <h3>Category: <%= @product.category %></h3>
+  <h2><%= @product.name %></h2>
 
   <% if @product.photo.attached? %>
     <%= cl_image_tag @product.photo.key, height: 150, width: 150, crop: :fill %>
@@ -9,32 +8,44 @@
 
   <div>
     <% if @product&.fully_recyclability.round == 100 %>
-        <p>Great news! This piece of packaging is made of</p>
-        <ul>
-        <% @materials.each do |material|%>
-        <li><%= material.name %></li>
-        <%end%>
-        </ul>
+        <p>Great news! The packaging is made of</p>
+          <ul>
+          <% @materials.each do |material|%>
+            <li><%= material.name %></li>
+          <%end%>
+          </ul>
+        <p> It's fully recyclable! Please put it in your recycling bin.</p>
+        <p>TIP: Empty and rinse before recycling! Food and liquid can spoil whole loads of recycling and then it just ends up in landfill or incinerated</p>
+    <% elsif @product&.fully_recyclability.round == 0 %>
+        <p>Sorry! The packaging is made of</p>
+          <ul>
+          <% @materials.each do |material|%>
+          <li><%= material.name %></li>
+          <%end%>
+          </ul>
+        <p> It's not recyclable! Please put it in your general waste bin.</p>
+        <p>TIP! Buy more sustainable products in the future <strong><%= link_to "We found these alternatives for you!", products_path %></strong></p>
     <% else %>
 
         <% recyclable_materials = @materials.select {|material| material.recyclability}  %>
         <% not_recyclable_materials = @materials - recyclable_materials %>
-        <p>Unfortunately, this product is not fully recyclable.</p>
-        <p>This is the non recyclable material in your product:</p>
-        <ul>
-        <% not_recyclable_materials.each do |material|%>
-        <li> <%= material.name%></li>
-        <%end%>
-        </ul>
-        <% if recyclable_materials.any?%>
-        <p>This is the recyclable material in your product:</p>
-        <ul>
-        <% recyclable_materials.each do |material|%>
-        <li> <%= material.name%></li>
-        <%end%>
-        </ul>
-        <%end%>
-        <p>Would you like to buy more sustainable products in the future? <strong><%= link_to "We found these alternatives for you!", alternatives_product_path(@product) %></strong></p>
+        <p>This packaging is made up of different materials. Before putting it into the bin, let's separate the components!</p>
+        
+          <% if recyclable_materials.any?%>
+          <p>Recyclable material in your product:</p>
+          <ul>
+            <% recyclable_materials.each do |material|%>
+            <li> <%= material.name%></li>
+            <%end%>
+            </ul>
+          <%end%>
+          <p>Non recyclable material in your product:</p>
+          <ul>
+            <% not_recyclable_materials.each do |material|%>
+            <li> <%= material.name%></li>
+            <%end%>
+            </ul>
+          <p>TIP! Buy more sustainable products in the future <strong><%= link_to "We found these alternatives for you!", products_path %></strong></p>
 
     <% end %>
 
