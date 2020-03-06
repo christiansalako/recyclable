@@ -1,6 +1,6 @@
 <div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >
 <%= link_to "Sign out", destroy_user_session_path(@user), method: :delete %>
-  <img src="/assets/main-logo.png" class="mainlogo">
+  <%= image_tag 'main-logo.png', class: 'mainlogo'%>
   <div class="intro">
     Recycable will help you identify if your item is recyclable. 
     Let's sort it out!
