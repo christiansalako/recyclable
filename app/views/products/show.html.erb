@@ -5,7 +5,6 @@
   <h2><%= @product.name %></h2>
 </div>
 
-
   <% if @product.photo.attached? %>
   <div class= "pic">
     <%= cl_image_tag @product.photo.key, height: 150, width: 150, crop: :fill %>
@@ -31,9 +30,8 @@
           <%end%>
           </ul>
         <p> It's not recyclable! Please put it in your general waste bin.</p>
-        <p>TIP! Buy more sustainable products in the future <strong><%= link_to "We found these alternatives for you!", products_path %></strong></p>
+        <p>TIP! Buy more sustainable products in the future <strong><%= link_to "We found these alternatives for you!", alternatives_product_path(@product) %></strong></p>
     <% else %>
-
         <% recyclable_materials = @materials.select {|material| material.recyclability}  %>
         <% not_recyclable_materials = @materials - recyclable_materials %>
         <p>This packaging is made up of different materials. Before putting it into the bin, let's separate the components!</p>
@@ -52,12 +50,10 @@
             <li> <%= material.name%></li>
             <%end%>
             </ul>
-          <p>TIP! Buy more sustainable products in the future <strong><%= link_to "We found these alternatives for you!", products_path %></strong></p>
-
+          <p>TIP! Buy more sustainable products in the future <strong><%= link_to "We found these alternatives for you!", alternatives_product_path(@product) %></strong></p>
     <% end %>
     <div class="zizi">
     <%= link_to "back to results",products_path %>
    </div>
   </div>
-
 </div>

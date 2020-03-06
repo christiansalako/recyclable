@@ -1,12 +1,22 @@
 <div style="background-image: url(<%= image_path 'sign_in.jpg' %>); background-size: cover; background-position: center; height: 100vh">
+  <div class="uselessback">
+  <p>back</p>
+  </div>
 <div class="container">
 
-  <h1> <%= @products.count %> We've found something for you!</h1>
-
+   <div class="heading5">
+  <h5> We've found <%= @products.count %> products for you!</h5>
+    </div>
   <% @products.each do |product| %>
-    <p><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %><%= link_to product.name, product_path(product), class: 'product_box'%></p>
+
+  <div class="box">
+    <p><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %> <div><%= link_to product.name, product_path(product), class: 'product_box'%> </div></p>
+  </div>
   <% end %>
 
-  <h5><%=link_to "make another search", user_path(current_user), class: 'make_another_search' %></h5>
 
 </div>
+  <h5><%=link_to "make another search", user_path(current_user), id: "make_another_search" %></h5>
+
+</div>
+
