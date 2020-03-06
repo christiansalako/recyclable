@@ -1,10 +1,11 @@
 
 <div class="container">
+
   <h1>Alternative page</h1>
-  <ol>
+  <ul>
   <%@alternatives.each do |alternative| %>
-  <li><%= alternative.name %></li>
+  <li><%= cl_image_tag alternative.photo.key, height: 150, width: 150, crop: :fill %><%= alternative.name %></li>
   <% end %>
   <%= link_to "back to results", product_path(@product) %>
-  </ol>
+  </ul>
 </div>
