@@ -8,7 +8,7 @@
 
   <div class="box">
     <p><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %>
-      <div>
+      <div class="text">
       <%= link_to product.name, product_path(product), class: 'product_box'%> </div></p>
     </div>
   <% end %>
