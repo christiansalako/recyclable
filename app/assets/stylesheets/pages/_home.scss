@@ -44,8 +44,8 @@ padding-top: 10px;
 .mainlogo{
   width: 100%;
   object-fit: cover;
-  margin-top: 90px;
-  margin-left: 10px;
+ margin-top: 62px;
+  margin-left: 15px;
   padding: 10px;
 }
 
@@ -61,7 +61,7 @@ padding-top: 10px;
   position: absolute;
   width: 302px;
   height: 119px;
-  left: 27px;
+  left: 38px;
   top: 218px;
   font-style: normal;
   font-weight: normal;
@@ -73,15 +73,7 @@ padding-top: 10px;
 }
 
 h2{
-text-align: center;
-padding-top: 40px;
 font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 18px;
-line-height: 21px;
-text-align: center;
-
 
 }
 
@@ -125,11 +117,10 @@ h5{
 }
 
 .consumerheading{
-  color: black;
+  color: white;
     text-align: center;
     font-size: 30px;
-    padding-top: 10px;
-    background-color: #f99d2b;
+    background-color: #FFB906;
     border-radius: 20px 20px 0 0;
     width: 70%;
     margin: 0 auto;
@@ -142,7 +133,6 @@ h5{
   text-align: center;
   padding-left: 10px;
   color: purple;
-  margin:auto 10%;
   border-radius: 20px;
 
 
@@ -159,10 +149,10 @@ h5{
   padding: 16px;
 }
 
-.btn{
-  background-color:#4BC999;
-  border-radius: 20px;
-}
+// .btn{
+//   background-color:#4BC999;
+//   border-radius: 20px;
+// }
 
 .background3{
   background-color:#FFC739;
@@ -182,12 +172,62 @@ h5{
     text-align: center;
     font-size: 20px;
     color: #464646;
+    font-family: Reem Kufi;
 }
 
 .mainlogo2{
   width: 100%;
   object-fit: cover;
   padding: 10px;
-  margin-bottom: 540px;
   margin-right: -377px;
+  padding-bottom: 450px;
+}
+
+.sign-in {
+  .form-actions{
+    width: 202px;
+    height: 47px;
+    color: white;
+    background: linear-gradient(90deg, #4BC999 0%, #1E3E29 100%);
+    border-radius: 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    margin: 20px auto;
+    color: #FFFFFF;
+  }
+
+  .btn{
+    color:white;
+  }
+}
+
+.dh2{
+text-align: center;
+padding-top: 30px;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 21px;
+text-align: center;
+
+}
+
+h2{
+  font-family: Reem Kufi;
+}
+
+.m-0{
+  font-family: Reem Kufi;
+  margin: 1px !important;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #4BC999;
+    border-color: #167FFB;
+    border-radius: 20px;
 }
