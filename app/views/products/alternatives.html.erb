@@ -4,7 +4,8 @@
   <h1>Alternative page</h1>
   <ul>
   <%@alternatives.each do |alternative| %>
-  <li><%= cl_image_tag alternative.photo.key, height: 150, width: 150, crop: :fill %><%= alternative.name %></li>
+  <li><%= cl_image_tag alternative.photo.key, height: 150, width: 150, crop: :fill %> 
+  <%= link_to alternative.name, product_path(alternative)%></li>
   <% end %>
   <%= link_to "back to results", product_path(@product) %>
   </ul>
