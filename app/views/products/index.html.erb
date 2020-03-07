@@ -1,22 +1,19 @@
-<div style="background-image: url(<%= image_path 'sign_in.jpg' %>); background-size: cover; background-position: center; height: 100vh">
-  <div class="uselessback">
-  </div>
-<div class="container">
-
+<div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >
+<div class="container-index">
+<div><%= image_tag 'main-logo.png', class: 'mainlogo-index'%></div>
    <div class="heading5">
   <h5> We found <%= @products.count %> products for you!</h5>
     </div>
   <% @products.each do |product| %>
 
   <div class="box">
-    <div class="images"><%= cl_image_tag product.photo.key, height: 120, width: 120, crop: :fill %></div>
+    <div class="images"><%= cl_image_tag product.photo.key, height: 100, width: 100, crop: :fill %></div>
       <div class="text"><p><%= link_to product.name, product_path(product)%></p> </div>
     </div>
   <% end %>
 
 
 </div>
-  <h5><%=link_to "make another search", user_path(current_user), id: "make_another_search" %></h5>
-
+  <h5><%=link_to "new search", user_path(current_user), class: "new-search" %></h5>
 </div>
-
+</div>
