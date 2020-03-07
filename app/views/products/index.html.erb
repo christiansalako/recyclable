@@ -4,14 +4,13 @@
 <div class="container">
 
    <div class="heading5">
-  <h5> We've found <%= @products.count %> products for you!</h5>
+  <h5> We found <%= @products.count %> products for you!</h5>
     </div>
   <% @products.each do |product| %>
 
   <div class="box">
-    <p><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %>
-      <div class="text">
-      <%= link_to product.name, product_path(product), class: 'product_box'%> </div></p>
+    <div class="images"><%= cl_image_tag product.photo.key, height: 120, width: 120, crop: :fill %></div>
+      <div class="text"><p><%= link_to product.name, product_path(product)%></p> </div>
     </div>
   <% end %>
 
