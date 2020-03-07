@@ -233,17 +233,21 @@ h2{
 }
 
 
-.box .product_box{
-  background-color: white;
-}
-
 
 .box {
+  display: flex;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 10px;
   border-radius: 20px;
+}
+
+.images {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .card-trip > img {
@@ -289,8 +293,21 @@ h2{
   padding-top: 10px;
 }
 
-.text {
-  font-size: 11px;
+
+.text p {
+  font-size: 16px;
+  padding-right: 15px;
+  padding-top: 20px;
+  padding-left: 15px;
+  color: black;
+}
+
+.text a {
+  color: black;
+    &:hover {
+    color: grey;
+    text-decoration: none;
+    }
 }
 
 .make_another_search{
