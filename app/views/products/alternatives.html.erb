@@ -1,24 +1,18 @@
-<div style="background-image: url(<%= image_path 'sign_in.jpg' %>); background-size: cover; background-position: center; height: 100vh">
-<div class="container">
-
-  <h4>Alternative page</h4>
+<div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >
+<div class="container-index">
+<div><%= image_tag 'main-logo.png', class: 'mainlogo-index'%></div>
 
   <div class="heading5">
-    <h5> We've found <%= @alternatives.count %> alternatives for you!</h5>
+    <h5> Similar content, better packaging!<br> <%= @alternatives.count %> alternatives for you!</h5>
   </div>
-
-
 
   <%@alternatives.each do |alternative| %>
 
   <div class="box">
-    <p> <%= cl_image_tag alternative.photo.key, height: 150, width: 150, crop: :fill %>
-      <div class="text">
-        <%= link_to alternative.name, product_path(alternative),class: 'product_box'%></div></p>
+    <div class="images"> <%= cl_image_tag alternative.photo.key, height: 100, width: 100, crop: :fill %></div>
+      <div class="text"> <%= link_to alternative.name, product_path(alternative)%></div>
     </div>
   <% end %>
   <%= link_to "back to results", product_path(@product) %>
 
 </div>
-
-lkgleklk
