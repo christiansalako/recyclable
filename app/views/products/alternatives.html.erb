@@ -1,8 +1,15 @@
-<div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >
+<%
+=begin%>
+ <div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" > 
+<%
+=end%>
 <div class="container-index">
-<div><%= image_tag 'main-logo.png', class: 'mainlogo-index'%></div>
+<ul class= "navbar-recyclable"> 
+<div><%= image_tag 'main-logo.png', class: "logo-navbar"%></div>
+<li style="padding-top: 12px; padding-right: 10px;"><%= link_to "Back", user_path(current_user) %></li>
+  </ul>
 
-  <div class="heading5">
+  <div class="heading5" style="padding-top: 65px;">
     <h5> Similar content, better packaging!<br> <%= @alternatives.count %> alternatives for you!</h5>
   </div>
 

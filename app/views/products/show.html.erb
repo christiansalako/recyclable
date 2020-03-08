@@ -1,8 +1,16 @@
-<div class="container">
-<div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 120vh" >
+<%
+=begin%>
+ <div class="container">
+<div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 120vh" > 
+<%
+=end%>
 
-<div><%= image_tag 'main-logo.png', class: 'mainlogo-index'%></div>
-<div class="search-result-card">
+<div class="container-index">
+<ul class= "navbar-recyclable"> 
+  <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li> 
+  <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "Back", user_path(current_user) %></li>
+  </ul>
+<div class="search-result-card" style="margin-top: 80px;">
   <% if @product.photo.attached? %>
   <div class= "pic">
     <%= cl_image_tag @product.photo.key, height: 100, width: 100, crop: :fill %>
