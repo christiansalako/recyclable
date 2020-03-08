@@ -4,16 +4,18 @@
   background-color:#FFC739;
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 0px;
+  padding-left: 10px;
   font-size: 16px;
   position: fixed;
   top: 0;
   width: 100%;
 }
 
-
 .logo-navbar {
-  width: 95px;
+  width: 100px;
   height: 50px;
 }
 
@@ -23,10 +25,4 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
 }
