@@ -10,7 +10,9 @@
 
   <div class="box">
     <div class="images"> <%= cl_image_tag alternative.photo.key, height: 100, width: 100, crop: :fill %></div>
-      <div class="text"> <%= link_to alternative.name, product_path(alternative)%></div>
+      <div class="text"><p> <%= link_to alternative.name, product_path(alternative)%></p></div>
+      <div style="font-size: 30px; color: green; padding-top: 7px; padding-right: 7px;">
+        <i class="far fa-check-circle"></i> </div>
     </div>
   <% end %>
   <%= link_to "back to results", product_path(@product) %>
