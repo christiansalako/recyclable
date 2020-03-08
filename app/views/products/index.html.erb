@@ -1,7 +1,13 @@
-<div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >
+<%
+=begin%>
+ <div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" > 
+<%
+=end%>
 <div class="container-index">
-<div class= "navbar-lewagon"> <div><%= link_to "Home", root_path%></div> <div><%= link_to "Sign out", destroy_user_session_path(@user), method: :delete %></div> </div>
-<div><%= image_tag 'main-logo.png', class: 'mainlogo-index'%></div>
+<ul class= "navbar-recyclable"> 
+  <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li> 
+  <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "Sign out", destroy_user_session_path(@user), method: :delete %></li>
+  </ul>
    <div class="heading5">
   <h5> We found <%= @products.count %> products for you!</h5>
     </div>
