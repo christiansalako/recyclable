@@ -4,7 +4,8 @@
 
 .card-action-buttons {
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    margin-top: 15px;
 }
 
 .box-cards {
@@ -15,4 +16,15 @@
   margin: 10px auto;
   max-width: 800px;
   border-radius: 15px;
+}
+
+.text-cards {
+  padding-top: 20px;
+}
+
+.image-cards {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
