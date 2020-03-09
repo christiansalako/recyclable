@@ -8,7 +8,7 @@
 <div class="container-index">
 <ul class= "navbar-recyclable"> 
   <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li> 
-  <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "Back", user_path(current_user) %></li>
+  <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "Back", products_path %></li>
   </ul>
 <div class="search-result-card" style="margin-top: 80px;">
   <% if @product.photo.attached? %>
