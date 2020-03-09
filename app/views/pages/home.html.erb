@@ -1,17 +1,15 @@
-<div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >
-<%= link_to "Sign out", destroy_user_session_path(@user), method: :delete %>
+<div class="consumer-page" style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >
+
   <%= image_tag 'main-logo.png', class: 'mainlogo'%>
-  <div class="intro">
-    Recycling can be confusing but it doesn't have to.
+  <div class="">
+    <p class="text-center mx-3">
+      Recycling can be confusing but it doesn't have to.
     We will help you identify if your item is recyclable. <br>
     Let's sort it out!
-  </div>
-  <div class="buttons-wrapper">
+    </p>
+
     <%= link_to "Sign up", new_user_registration_path, class: "btn sign-up-btn"%>
     <%= link_to "Sign in", new_user_session_path, class: "btn sign-in-btn" %>
-
-
-
+    <%= link_to "Sign out", destroy_user_session_path(@user), method: :delete, class: "btn sign-in-btn"%>
   </div>
-
 </div>
