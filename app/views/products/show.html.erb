@@ -1,13 +1,14 @@
 <%
 =begin%>
  <div class="container">
-<div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 120vh" > 
+<div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 120vh" >
 <%
 =end%>
 
 <div class="container-index">
-<ul class= "navbar-recyclable">  
-  <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "Back", products_path %></li>
+
+<ul class= "navbar-recyclable">
+  <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "Add another Item", new_product_path(current_user) %></li>
   <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li>
   </ul>
 <div class="search-result-card" style="margin-top: 80px;">
@@ -81,3 +82,5 @@
     <% end %>
 </div>
 </div>
+
+
