@@ -1,14 +1,14 @@
 
  <%
 =begin%>
- <div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >  
+ <div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >
 <%
 =end%>
 
 <div class="container-index">
-<ul class= "navbar-recyclable"> 
+<ul class= "navbar-recyclable">
   <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "New search", user_path(current_user) %></li>
-  <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li> 
+  <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li>
   </ul>
    <div class="heading5">
   <h5> We found <%= @products.count %> products for you!</h5>
@@ -33,12 +33,16 @@
     </div>
   <% end %>
 
+</div>
+
+
   <% else %>
 
     <h2>
-      Sorry no product found for !
+      Sorry no product found !
     </h2>
 
 <% end %>
 
 </div>
+
