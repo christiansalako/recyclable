@@ -5,15 +5,15 @@
 =end%>
 <div class="container-index">
 <ul class= "navbar-recyclable"> 
-<div><%= image_tag 'main-logo.png', class: "logo-navbar"%></div>
 <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "Back", user_path(current_user) %></li>
+<li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li> 
   </ul>
 
   <div class="heading5" style="padding-top: 65px;">
     <h5> Similar content, better packaging!<br> <%= @alternatives.count %> alternatives for you!</h5>
   </div>
 
-  <%@alternatives.each do |alternative| %>
+  <%@alternatives.uniq.each do |alternative| %>
 
   <div class="box">
     <div class="images"> <%= cl_image_tag alternative.photo.key, height: 100, width: 100, crop: :fill %></div>
