@@ -1,7 +1,8 @@
 <div class="container-index">
-  <ul class= "navbar-recyclable"> 
-    <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "Back", user_path(current_user) %></li>
-    <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li> 
+  <ul class= "navbar-recyclable">
+    <li style="padding-top: 12px; padding-right: 10px;">
+      <%= link_to "Back", root_path(current_user) %></li>
+    <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li>
   </ul>
 <div class="dashboard-content">
   <p>Welcome back!</p>
