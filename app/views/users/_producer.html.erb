@@ -1,11 +1,14 @@
-<div class="consumer-page" style="background-image: url(<%=  asset_path('signin.png') %>); background-size: cover; background-position: center;">
-<%= image_tag 'main-logo.png', class:"mainlogo2"%>
-<div class="container">
+<div class="container-index">
+  <ul class= "navbar-recyclable"> 
+    <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "Back", user_path(current_user) %></li>
+    <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li> 
+  </ul>
+<div class="dashboard-content">
   <p>Welcome back!</p>
   <div class= "newproduct3">
   <p><%= link_to "List a new product", new_product_path %> </p>
   </div>
-
+</div>
 </div>
 
 
