@@ -1,0 +1,21 @@
+<div class="container-index">
+<ul class= "navbar-recyclable"> 
+  <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "New search", user_path(current_user) %></li>
+  <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li> 
+  </ul>
+
+<div class="form">
+  <%= simple_form_for [@product] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo %>
+    <%= f.association :materials, multiple: true, collection: Material.all.map { |m| [ "#{m.name} - #{m.category}", m.id ] } %>
+    <%= f.submit "Save changes" %>
+  <% end %>
+  <%= link_to "back", user_path(current_user) %>
+</div>
+
+
+
+
+
+

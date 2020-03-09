@@ -5,11 +5,20 @@
     <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li>
   </ul>
 
-<div>
+
+
+
+
+<div class="dashboard-content">
+<p>My products</p>
 <% @products.each do |product| %>
-  <div class="box">
+  <div class="box-cards">
     <div class="images"><%= cl_image_tag product.photo.key, height: 100, width: 100, crop: :fill %></div>
-      <div class="text"><p><%= link_to product.name, product_path(product)%></p> </div>
+      <div><div class="text"><p><%= link_to product.name, product_path(product)%></p> </div>
+      <div class="card-action-buttons">
+        <div><%= link_to "Delete", product_path(product), method: :delete%></div>|<div><%= link_to "Update", edit_product_path(product)%></div>
+      </div> 
+      </div> 
       <% if product&.fully_recyclability.round == 100 %>
       <div style="font-size: 30px; color: green; padding-top: 7px; padding-right: 7px;">
         <i class="far fa-check-circle"></i> </div>
@@ -25,22 +34,7 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<div class="dashboard-content">
-  <p>Welcome back!</p>
-  <div class= "newproduct3">
   <p><%= link_to "Add a new product", new_product_path %></p>
-  </div>
 </div>
 </div>
 

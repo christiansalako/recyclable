@@ -1,3 +1,18 @@
 .dashboard-content {
-    margin-top: 30px;
+    margin-top: 100px;
+}
+
+.card-action-buttons {
+    display: flex;
+    justify-content: end;
+}
+
+.box-cards {
+  display: flex;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 10px auto;
+  max-width: 800px;
+  border-radius: 15px;
 }
