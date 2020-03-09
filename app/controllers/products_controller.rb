@@ -7,12 +7,14 @@ class ProductsController < ApplicationController
     end
 
     def index
-      @products = Product.all
-        if params[:query].present?
-          @products = Product.where("name ILIKE ?", "%#{params[:query]}%")
-        else
-          @products = Product.all
+      # @products = Product.all
+      
+      if params[:query].present?
+        @products = Product.where("name ILIKE ?", "%#{params[:query]}%")
+      else
+        @products = Product.all
       end
+      @products = Product.where(user: current_user) if current_user.producer
     end
 
     def new
@@ -46,11 +48,9 @@ class ProductsController < ApplicationController
     end
 
     def alternatives
-
       @product = Product.find(params[:id])
       results = Product.where(category: @product.category).joins(:materials).merge(Material.where(recyclability: true))
       @alternatives = results.select { |alternative| alternative.fully_recyclability == 100 }
-
     end
 
     def product_params
