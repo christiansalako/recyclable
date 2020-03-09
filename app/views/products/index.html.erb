@@ -7,8 +7,8 @@
 
 <div class="container-index">
 <ul class= "navbar-recyclable"> 
-  <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li> 
   <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "New search", user_path(current_user) %></li>
+  <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li> 
   </ul>
    <div class="heading5">
   <h5> We found <%= @products.count %> products for you!</h5>

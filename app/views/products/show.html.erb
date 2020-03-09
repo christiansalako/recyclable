@@ -6,9 +6,9 @@
 =end%>
 
 <div class="container-index">
-<ul class= "navbar-recyclable"> 
-  <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li> 
+<ul class= "navbar-recyclable">  
   <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "Back", products_path %></li>
+  <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li>
   </ul>
 <div class="search-result-card" style="margin-top: 80px;">
   <% if @product.photo.attached? %>
@@ -35,6 +35,9 @@
           </ul>
         <p>The packaging is therefore fully recyclable and can go straight into your recycling bin.</p>
         <div class="tip"><strong>TIP:</strong> Empty and rinse before recycling! Food and liquid can spoil whole loads of recycling which then end up in landfill or incinerated.
+        </div>
+        <div class="zizi">
+          <%= link_to "Search another item", user_path(current_user) %>
         </div>
     <% elsif @product&.fully_recyclability.round == 0 %>
         <div class="recyclable-message">
