@@ -4,11 +4,33 @@
       <%= link_to "Back", root_path(current_user) %></li>
     <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li>
   </ul>
+
 <div class="dashboard-content">
-  <p>Welcome back!</p>
-  <div class= "newproduct3">
-  <p><%= link_to "List a new product", new_product_path %> </p>
+<p>My products</p>
+<% @products.each do |product| %>
+  <div class="box-cards">
+    <div class="image-cards"><%= cl_image_tag product.photo.key, height: 100, width: 100, crop: :fill %></div>
+      <div><div class="text-cards"><%= link_to product.name, product_path(product)%></div>
+      <div class="card-action-buttons">
+        <div><%= link_to "<i class='fas fa-trash'></i>".html_safe, product_path(product), method: :delete, data: { confirm: "Are you sure?" } %></div>|<div><%= link_to "<i class='fas fa-edit'></i>".html_safe, edit_product_path(product)%></div>
+      </div> 
+      </div> 
+      <% if product&.fully_recyclability.round == 100 %>
+      <div style="font-size: 30px; color: green; padding-top: 7px; padding-right: 7px;">
+        <i class="far fa-check-circle"></i> </div>
+      <% elsif product&.fully_recyclability.round == 0 %>
+       <div style="font-size: 30px; color: red; padding-top: 7px; padding-right: 7px;">
+        <i class="fas fa-exclamation-circle"></i></div>
+      <%else%>
+      <div style="font-size: 30px; color: orange; padding-top: 7px; padding-right: 7px;">
+        <i class="fas fa-exclamation-circle"></i></div>
+        <%end%>
   </div>
+  <% end %>
+</div>
+
+
+  <p><%= link_to "Add a new product", new_product_path %></p>
 </div>
 </div>
 
