@@ -13,7 +13,7 @@
     <h5> Similar content, better packaging!<br> <%= @alternatives.count %> alternatives for you!</h5>
   </div>
 
-  <%@alternatives.each do |alternative| %>
+  <%@alternatives.uniq.each do |alternative| %>
 
   <div class="box">
     <div class="images"> <%= cl_image_tag alternative.photo.key, height: 100, width: 100, crop: :fill %></div>
