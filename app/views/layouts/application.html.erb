@@ -14,8 +14,8 @@
     <title>Recyclable</title>
 
     <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <meta name="description" content="<%= meta_description %>">
 
@@ -34,6 +34,7 @@
     <meta name="twitter:description" content="<%= meta_description %>">
     <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>">
+    <%= javascript_pack_tag 'application','data-turbolinks-track': 'reload', defer: true %>
   </head>
   <body style="background-color:#F9F7E8;">
     <div class="main-container">
@@ -44,7 +45,6 @@
 
       <%= yield %>
 
-      <%= javascript_pack_tag 'application' %>
     </div>
   </body>
 </html>

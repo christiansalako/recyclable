@@ -1,18 +1,26 @@
-<div class="container">
-<div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >
-<div class="card1">
-<%= simple_form_for [@product] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :category, collection: ['chocolate', 'rice', 'pizza'] %>
-  <div class="photo-upload">
-  <%= f.input :photo %>
-  </div>
-  <%= f.association :materials, multiple: true %>
-  <div class="submit">
-  <%= f.submit %>
-</div>
-<% end %>
-</div>
-<%= link_to "back", user_path(current_user) %>
+<div class="container-index">
+<ul class= "navbar-recyclable">
+  <li style="padding-top: 12px; padding-right: 10px;">
+   <!--  <%= link_to "New search", user_path(current_user) %></li> -->
+  <li><%= link_to image_tag('main-logo.png'), user_path(current_user), class: "logo-navbar"%></li>
+  </ul>
+
+
+
+ <div class="form-style-9">
+  <%= simple_form_for [@product] do |f| %>
+  <ul>
+    <li>
+    <%= f.input :name, class: "field-style field-split align-left" %>
+    <%= f.input :category, collection: Product.pluck(:category).uniq, class: "" %>
+    <%= f.input :photo %>
+    <%= f.association :materials, multiple: true, collection: Material.all.map { |m| [ "#{m.name} - #{m.category}", m.id ] } %>
+    <%= f.submit "Add Product" %>
+    </li>
+  </ul>
+
+    <% end %>
+    <%= link_to "back", user_path(current_user) %>
+
 </div>
 
