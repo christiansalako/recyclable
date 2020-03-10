@@ -8,10 +8,10 @@
 
 <div class="container-index">
 <ul class= "navbar-recyclable">
-  <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "New search", user_path(current_user) %></li>
+  <li class="newzi"><%= link_to "New search", user_path(current_user), class: "newzi2" %></li>
   <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li>
   </ul>
-   <div class="heading5">
+   <div class="heading5 margin-50">
   <h5> We found <%= @products.count %> products for you!</h5>
     </div>
 
@@ -23,13 +23,13 @@
       <div class="text"><p><%= link_to product.name, product_path(product)%></p> </div>
       <% if product&.fully_recyclability.round == 100 %>
       <div style="font-size: 30px; color: green; padding-top: 7px; padding-right: 7px;">
-        <i class="far fa-check-circle"></i> </div>
+        <i class="far fa-check-circle position-button"></i> </div>
       <% elsif product&.fully_recyclability.round == 0 %>
        <div style="font-size: 30px; color: red; padding-top: 7px; padding-right: 7px;">
-        <i class="fas fa-exclamation-circle"></i></div>
+        <i class="fas fa-exclamation-circle position-button"></i></div>
       <%else%>
       <div style="font-size: 30px; color: orange; padding-top: 7px; padding-right: 7px;">
-        <i class="fas fa-exclamation-circle"></i></div>
+        <i class="fas fa-exclamation-circle position-button"></i></div>
         <%end%>
     </div>
   <% end %>
