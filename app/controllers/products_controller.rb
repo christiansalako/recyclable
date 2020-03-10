@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 
     def index
       # @products = Product.all
-      
+
       if params[:query].present?
         @products = Product.where("name ILIKE ?", "%#{params[:query]}%")
       else
@@ -56,6 +56,12 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
       results = Product.where(category: @product.category).joins(:materials).merge(Material.where(recyclability: true))
       @alternatives = results.select { |alternative| alternative.fully_recyclability == 100 }
+    end
+
+    def game
+      @products = Product.all.sample(3)
+
+
     end
 
     def product_params

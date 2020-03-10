@@ -1,18 +1,22 @@
 .navbar-recyclable {
   display: flex;
   justify-content: space-between;
-  background-color:#FFC739;
+  background-color: #FFC739;//#900C3F ;#FFC739;
   list-style-type: none;
   margin: 0;
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  padding:10px;
   font-size: 16px;
   position: fixed;
   top: 0;
   width: 100%;
+  padding-bottom: 20px;
+
+  a{
+    color: white;
+  }
 }
+
+
 
 .logo-navbar img {
   width: 120px;

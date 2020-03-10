@@ -1,16 +1,21 @@
+
+    <!-- Nav bar  -->
+
+<ul class="navbar-recyclable">
+    <li>
+      <%= link_to "make another search", root_path(current_user)  %>
+    </li>
+    <li> <h4><%= link_to "Play the game", root_path(current_user)  %> </h4></li>
+    <li><%= link_to "Sign out", destroy_user_session_path(@user), method: :delete %></li>
+  </ul>
+
+    <!-- Start of page -->
+
 <div class="container">
 
- <%
-=begin%>
- <div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >
-<%
-=end%>
 
 <div class="container-index">
-<ul class= "navbar-recyclable">
-  <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "New search", user_path(current_user) %></li>
-  <li><%= link_to image_tag('main-logo.png'), user_path(current_user), class: "logo-navbar"%></li>
-  </ul>
+
    <div class="heading5">
   <h5> We found <%= @products.count %> products for you!</h5>
     </div>

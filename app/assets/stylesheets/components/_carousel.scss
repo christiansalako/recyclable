@@ -1,0 +1,20 @@
+.carousel-inner {
+  background-color: black;
+  color: black;
+
+  .recyclable-message {
+    background-color: transparent;
+    color: white;
+  }
+}
+
+.carousel-control-prev {
+
+}
+
+.carousel-answer-option-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
