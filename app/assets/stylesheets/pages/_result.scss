@@ -1,7 +1,8 @@
 .container-index {
   text-align: center;
-  background-color: transparent;
+  background-color: #F9F7E8;
   padding: 0px;
+
 }
 
 .new-search {
@@ -31,4 +32,7 @@
   padding-right: 25px;
 }
 
-
+.position-button{
+  position: absolute;
+  right: 10px;
+}
