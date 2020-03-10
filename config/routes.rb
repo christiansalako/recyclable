@@ -5,14 +5,13 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :products do
     resources :materials, only: [:new, :create]
-
+    resources :favorites, only: [:create]
     collection do
       get :game
     end
-
     member do
       get :alternatives
     end
   end
-
+  resources :favorites, only: [:destroy]
 end

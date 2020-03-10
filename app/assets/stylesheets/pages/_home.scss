@@ -6,7 +6,6 @@
 // background-color: #4BC999;
 .main-container {
   height: 100vh;
-      overflow-x: hidden;
 }
 
 .sign-up-btn {
@@ -109,7 +108,6 @@ justify-content: center;
 
 .forgotbtn{
   color:purple;
-  margin-left: 50px;
   padding-top: 10px;
   display: inline;
   text-align: center;
@@ -227,7 +225,11 @@ font-weight: bold;
 font-size: 18px;
 line-height: 21px;
 text-align: center;
-
+margin-right: 79px;
+margin-left: 77px;
+border-radius: 20px 20px 0 0;
+background-color:#ffb700;
+padding-top: 15px;
 }
 
 h2{
@@ -242,7 +244,6 @@ h2{
 .btn-primary {
     color: white;
     background-color: #4BC999;
-    border-color: #167FFB;
     border-radius: 20px;
   //   @media(min-width: 1200px) {
 
@@ -253,6 +254,19 @@ h2{
 
 
 .box {
+  display: flex;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin: 10px auto;
+  max-width: 800px;
+  border-radius: 15px;
+  position: relative;
+  margin-left: 26px;
+  margin-right: 26px;
+}
+
+.card-box {
   display: flex;
   overflow: hidden;
   background: white;
@@ -347,4 +361,8 @@ h2{
     text-align: center;
     margin-left: 14px;
     margin-right: 14px;
+}
+
+.backbton{
+  color: white;
 }

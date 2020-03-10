@@ -8,6 +8,7 @@
   font-size: 16px;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   padding-bottom: 20px;
 
@@ -17,6 +18,13 @@
 }
 
 
+  z-index: 999;
+}
+
+
+.logo-navbar {
+  width: 162px;
+}
 
 .logo-navbar img {
   width: 120px;
@@ -30,3 +38,23 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+
+.newzi{
+padding-top: 12px;
+padding-right: 10px;
+padding-left: 10px;
+margin-bottom: -12px;
+background-color: #F9F7E8;
+border-radius: 10px 10px 0 0;
+margin-left: 13px;
+}
+
+.newzi2{
+  color:#4BC999;
+}
+
+.margin-50{
+  margin-top: 70px !important;
+}
+
