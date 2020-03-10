@@ -11,20 +11,22 @@
     <% @user.favorites.each do |favorite|%>
       <div class="card-box">
         <div class="images"> <%= cl_image_tag favorite.product.photo.key, height: 100, width: 100, crop: :fill %></div>
-        <div class="text"><p> <%= link_to favorite.product.name, product_path(favorite)%></p></div>
-          <% if favorite.product&.fully_recyclability.round == 100 %>
-            <div style="font-size: 30px; color: green; padding-top: 7px; padding-right: 7px;">
-              <i class="far fa-check-circle"></i>
-            </div>
-          <% elsif favorite.product&.fully_recyclability.round == 0 %>
-            <div style="font-size: 30px; color: red; padding-top: 7px; padding-right: 7px;">
-              <i class="fas fa-exclamation-circle"></i>
-            </div>
-          <%else%>
-            <div style="font-size: 30px; color: orange; padding-top: 7px; padding-right: 7px;">
-              <i class="fas fa-exclamation-circle"></i>
-            </div>
+        <% if favorite.product&.fully_recyclability.round == 100 %>
+          <div style="font-size: 30px; color: green; padding-top: 7px; padding-right: 7px;">
+            <i class="far fa-check-circle"></i>
+          </div>
+        <% elsif favorite.product&.fully_recyclability.round == 0 %>
+          <div style="font-size: 30px; color: red; padding-top: 7px; padding-right: 7px;">
+            <i class="fas fa-exclamation-circle"></i>
+          </div>
+        <%else%>
+          <div style="font-size: 30px; color: orange; padding-top: 7px; padding-right: 7px;">
+            <i class="fas fa-exclamation-circle"></i>
+          </div>
         <%end%>
+        <div class="text">
+          <%= link_to favorite.product.name, product_path(favorite)%>
+        </div>
       </div>
     <%end%>
 
