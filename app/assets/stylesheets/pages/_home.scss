@@ -6,7 +6,6 @@
 // background-color: #4BC999;
 .main-container {
   height: 100vh;
-      overflow-x: hidden;
 }
 
 .sign-up-btn {
@@ -263,6 +262,16 @@ h2{
   position: relative;
   margin-left: 26px;
   margin-right: 26px;
+}
+
+.card-box {
+  display: flex;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 10px auto;
+  max-width: 800px;
+  border-radius: 15px;
 }
 
 .images {
