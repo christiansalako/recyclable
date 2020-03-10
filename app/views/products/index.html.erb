@@ -1,22 +1,49 @@
-<div style="background-image: url(<%= image_path 'sign_in.jpg' %>); background-size: cover; background-position: center; height: 100vh">
-  <div class="uselessback">
-     <p>back</p>
-  </div>
 <div class="container">
 
-   <div class="heading5">
-  <h5> We've found <%= @products.count %> products for you!</h5>
-    </div>
-  <% @products.each do |product| %>
+ <%
+=begin%>
+ <div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >
+<%
+=end%>
 
+<div class="container-index">
+<ul class= "navbar-recyclable">
+  <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "New search", user_path(current_user) %></li>
+  <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li>
+  </ul>
+   <div class="heading5">
+  <h5> We found <%= @products.count %> products for you!</h5>
+    </div>
+
+<% if @products.present? %>
+
+  <% @products.each do |product| %>
   <div class="box">
-    <p><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %> <div><%= link_to product.name, product_path(product), class: 'product_box'%> </div></p>
-  </div>
+    <div class="images"><%= cl_image_tag product.photo.key, height: 100, width: 100, crop: :fill if product.photo.attached? %></div>
+      <div class="text"><p><%= link_to product.name, product_path(product)%></p> </div>
+      <% if product&.fully_recyclability.round == 100 %>
+      <div style="font-size: 30px; color: green; padding-top: 7px; padding-right: 7px;">
+        <i class="far fa-check-circle"></i> </div>
+      <% elsif product&.fully_recyclability.round == 0 %>
+       <div style="font-size: 30px; color: red; padding-top: 7px; padding-right: 7px;">
+        <i class="fas fa-exclamation-circle"></i></div>
+      <%else%>
+      <div style="font-size: 30px; color: orange; padding-top: 7px; padding-right: 7px;">
+        <i class="fas fa-exclamation-circle"></i></div>
+        <%end%>
+    </div>
   <% end %>
 
-
 </div>
-  <h5><%=link_to "make another search", user_path(current_user), id: "make_another_search" %></h5>
+
+
+  <% else %>
+
+    <h2>
+      Sorry no product found !
+    </h2>
+
+<% end %>
 
 </div>
 

@@ -1,12 +1,12 @@
-.container{
-  padding-top: 20px;
-  color: black;
+.container-index {
   text-align: center;
+  background-color: transparent;
+  padding: 0px;
 }
 
-.make_another_search{
+.new-search {
   color: black;
-  text-decoration: underline;
+  text-decoration: none;
   position: bottom;
 }
 .product_box{
@@ -19,3 +19,16 @@
   padding-right: 5px;
   margin: 150px;
 }
+
+.mainlogo-index {
+  width: 100%;
+  object-fit: cover;
+  margin-top: 74px;
+  margin-left: 4px;
+  padding-top: 35px;
+  padding-bottom: 0px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+

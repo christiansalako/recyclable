@@ -11,27 +11,31 @@
 
 .sign-up-btn {
   color: #2A422C;
-  position: absolute;
+  // position: absolute;
 width: 288px;
 height: 47px;
-left: 41px;
-top: 397px;
+// left: 41px;
+// top: 397px;
 background: linear-gradient(90deg, #4BC999 99.99%, #1E3E29 100%);
 border-radius: 20px;
 color:white;
 padding-top: 10px;
+display: block;
+margin: 20px auto
 }
 
 .sign-in-btn {
-  position: absolute;
+  // position: absolute;
 width: 288px;
 height: 47px;
-left: 41px;
-top: 467px;
+// left: 41px;
+// top: 467px;
 background: linear-gradient(90deg, #FFC739 74.73%, #FFC739 99.99%, #234830 100%);
 border-radius: 20px;
 color: white;
 padding-top: 10px;
+display: block;
+margin: 20px auto
 
 }
 
@@ -42,9 +46,9 @@ padding-top: 10px;
 }
 
 .mainlogo{
-  width: 100%;
+  // width: 100%;
   object-fit: cover;
- margin-top: 62px;
+  margin-top: 62px;
   margin-left: 15px;
   padding: 10px;
 }
@@ -83,6 +87,12 @@ font-family: Roboto;
   margin: 35px;
   border-radius: 15px;
   margin-top: 30px;
+  margin:auto;
+  width: 300px;
+}
+
+.form-inputs p {
+  text-align:left;
 }
 
 .form-actions{
@@ -112,20 +122,22 @@ h5{
 .consumer-page {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
   align-items: center;
 }
 
 .consumerheading{
   color: white;
-    text-align: center;
-    font-size: 30px;
-    background-color: #FFB906;
-    border-radius: 20px 20px 0 0;
-    width: 70%;
-    margin: 0 auto;
-    position: relative;
-    bottom: -1px;
+  text-align: center;
+  font-size: 30px;
+  background-color: #FFB906;
+  border-radius: 20px 20px 0 0;
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+  bottom: -1px;
+  padding-top: 5px;
 }
 
 
@@ -176,11 +188,13 @@ h5{
 }
 
 .mainlogo2{
-  width: 100%;
+  // width: 100%;
   object-fit: cover;
-  padding: 10px;
-  margin-right: -377px;
-  padding-bottom: 450px;
+  margin: 100px 0 25px 0;
+  // padding: 10px;
+  // margin-right: -377px;
+  // padding-bottom: 450px;
+  // position: absolute;
 }
 
 .sign-in {
@@ -230,20 +244,29 @@ h2{
     background-color: #4BC999;
     border-color: #167FFB;
     border-radius: 20px;
+  //   @media(min-width: 1200px) {
+
+  // }
 }
 
 
-.box .product_box{
-  background-color: white;
-}
 
 
 .box {
+  display: flex;
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 10px;
-  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 10px auto;
+  max-width: 800px;
+  border-radius: 15px;
+}
+
+.images {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .card-trip > img {
@@ -281,14 +304,47 @@ h2{
 }
 
 .heading5{
-  border: 2px solid black;
-  font-size: 10px;
-  background-color: white;
-  border-radius: 32px;
-  margin-top: 10px;
+  border: none;
+  border-radius: 15px;
+  font-size: 24px;
+  background-color: transparent;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
   padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+
+.text p {
+  font-size: 16px;
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-left: 30px;
+  color: black;
+}
+
+.text a {
+  color: black;
+    &:hover {
+    color: grey;
+    text-decoration: none;
+    }
 }
 
 .make_another_search{
   background-color: green;
+}
+
+.newproduct3{
+  color: white;
+  font-size: 30px;
+  background-color: #FFC739;
+    border-radius: 20px;
+    padding-top: 12px;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-left: 14px;
+    margin-right: 14px;
 }

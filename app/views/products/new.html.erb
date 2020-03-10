@@ -1,14 +1,28 @@
-<div class="container">
-
-<%= simple_form_for [@product] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :category, collection: ['chocolate', 'rice', 'pizza'] %>
-  <%= f.input :photo %>
-  <%= f.association :materials, multiple: true %>
-  <%= f.submit %>
-<% end %>
+<div class="container-index">
+<ul class= "navbar-recyclable">
+  <li style="padding-top: 12px; padding-right: 10px;">
+   <!--  <%= link_to "New search", user_path(current_user) %></li> -->
+  <li><%= image_tag 'main-logo.png', class: "logo-navbar"%></li>
+  </ul>
 
 
-<%= link_to "back", user_path(current_user) %>
+
+ <div class="form-style-9">
+  <%= simple_form_for [@product] do |f| %>
+  <ul>
+    <li>
+    <%= f.input :name, class: "field-style field-split align-left" %>
+    <%= f.input :category, collection: Product.pluck(:category).uniq, class: "" %>
+    <%= f.input :photo %>
+    <%= f.association :materials, multiple: true, collection: Material.all.map { |m| [ "#{m.name} - #{m.category}", m.id ] } %>
+    <%= f.submit "Add Product" %>
+
+    </li>
+  </ul>
+
+    <% end %>
+    <%= link_to "back", user_path(current_user) %>
+
 </div>
+
 

@@ -1,11 +1,12 @@
+
 <div class="consumer-page" style="background-image: url(<%=  asset_path('signin.png') %>); background-size: cover; background-position: center;">
-<img src="/assets/main-logo.png" class="mainlogo2">
+  <%= image_tag 'main-logo.png', class: "mainlogo2" %>
   <div class="consumer-container">
     <div class="textbox">
      Search any item below to find out information on its recyclability
     </div>
     <div class="consumerheading">
-     <p class="m-0">I'm a consumer!</p>
+     <p class="m-0"> Let's sort it out!</p>
     </div>
     <div class="background3">
       <div class="youritem">
@@ -19,8 +20,9 @@
             <%= submit_tag "Search", class: "btn btn-primary" %>
           </div>
         <% end %>
-
       </div>
+
     </div>
   </div>
+ <p><%= link_to "back", root_path(current_user)  %></p>
 </div>
