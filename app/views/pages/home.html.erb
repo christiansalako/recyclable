@@ -9,6 +9,10 @@
 
 
   <% if !user_signed_in? %>
+  <div class="textbox">
+      Recycling can be confusing but it doesn't have to be.<br>
+      Sign in and sort it out!
+      </div>
     <%= link_to "Sign up", new_user_registration_path, class: "btn sign-up-btn"%>
     <%= link_to "Sign in", new_user_session_path, class: "btn sign-in-btn" %>
   <% else  %>
@@ -23,14 +27,9 @@
     <li><%= link_to "Sign out", destroy_user_session_path(@user), method: :delete %></li>
   </ul>
 
-
-
-
-
     <div class="consumer-container">
       <div class="textbox">
-       Recycling can be confusing but it doesn't have to be.
-      We will help you identify if your item is recyclable. <br>
+      <p>Recyclable...or not? <br>Find out if your item is recyclable or if it should go into general waste instead.</p>
       </div>
       <div class="consumerheading">
        <p class="m-0"> Let's sort it out!</p>
