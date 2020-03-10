@@ -268,12 +268,22 @@ h2{
 
 .card-box {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  margin: 10px auto;
+  margin: 20px;
   max-width: 800px;
   border-radius: 15px;
+  position: relative;
+}
+
+.favorite-star {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: unset;
 }
 
 .images {
