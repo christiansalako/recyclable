@@ -1,18 +1,23 @@
 .navbar-recyclable {
   display: flex;
   justify-content: space-between;
-  background-color:#FFC739;
+  background-color: #FFC739;//#900C3F ;#FFC739;
   list-style-type: none;
   margin: 0;
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  padding:10px;
   font-size: 16px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  padding-bottom: 20px;
+
+  a{
+    color: white;
+  }
+}
+
+
   z-index: 999;
 }
 
@@ -20,6 +25,7 @@
 .logo-navbar {
   width: 162px;
 }
+
 .logo-navbar img {
   width: 120px;
   height: 33px;
@@ -32,6 +38,7 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
 
 .newzi{
 padding-top: 12px;
@@ -50,3 +57,4 @@ margin-left: 13px;
 .margin-50{
   margin-top: 70px !important;
 }
+

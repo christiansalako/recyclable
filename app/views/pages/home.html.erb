@@ -1,18 +1,56 @@
 <div class="consumer-page" style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >
 
-  <%= image_tag 'main-logo.png', class: 'mainlogo'%>
-  <div class="">
-    <p class="text-center mx-3">
-    Recycling can be confusing but it doesn't have to be.
-    We will help you identify if your item is recyclable. <br>
-    Let's sort it out!
-    </p>
+      <!-- Recyclable logo-->
 
-    <% if !user_signed_in? %>
-      <%= link_to "Sign up", new_user_registration_path, class: "btn sign-up-btn"%>
-      <%= link_to "Sign in", new_user_session_path, class: "btn sign-in-btn" %>
-    <% else  %>
-        <%= link_to "Sign out", destroy_user_session_path(@user), method: :delete, class: "btn sign-in-btn"%>
-    <% end %>
-  </div>
+  <%= image_tag 'main-logo.png', class: 'mainlogo'%>
+
+
+       <!-- If user signed in section logic-->
+
+
+  <% if !user_signed_in? %>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn sign-up-btn"%>
+    <%= link_to "Sign in", new_user_session_path, class: "btn sign-in-btn" %>
+  <% else  %>
+
+        <!-- Consumer navbar-->
+
+  <ul class="navbar-recyclable">
+    <li>
+      <!-- <a class="logo-navbar" href="/users/2"><img src="/assets/main-logo-119befbe4a4da145c246c287a29680ebaea1c71c15f026559f564834c184ed9c.png"></a> -->
+    </li>
+    <li> <%= link_to "Play the game", game_products_path %> </li>
+    <li><%= link_to "Sign out", destroy_user_session_path(@user), method: :delete %></li>
+  </ul>
+
+
+
+
+
+    <div class="consumer-container">
+      <div class="textbox">
+       Recycling can be confusing but it doesn't have to be.
+      We will help you identify if your item is recyclable. <br>
+      </div>
+      <div class="consumerheading">
+       <p class="m-0"> Let's sort it out!</p>
+      </div>
+      <div class="background3">
+        <div class="youritem">
+          <%= form_tag products_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "What's your item?"
+            %>
+            <div class="youritembtn">
+              <%= submit_tag "Search", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+<% end %>
+
 </div>

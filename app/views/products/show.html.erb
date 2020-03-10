@@ -8,25 +8,36 @@
 <div class="container-index">
 
 <ul class= "navbar-recyclable">
-  <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "Add another Item", new_product_path(current_user) %></li>
-  <li><%= link_to image_tag('main-logo.png'), user_path(current_user), class: "logo-navbar"%></li>
+  <li></li>
+  <!-- <li><%= link_to image_tag('main-logo.png'), user_path(current_user), class: "logo-navbar"%></li> -->
+  <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "Back to search results", products_path(current_user) %></li>
   </ul>
-<div class="search-result-card" style="margin-top: 80px;">
+
+<!-- <div class="search-result-card" style="margin-top: 80px;">
   <% if @product.photo.attached? %>
   <div class= "pic">
     <%= cl_image_tag @product.photo.key, height: 100, width: 100, crop: :fill %>
   <% end %>
   </div>
-  <div class="product-title">
-    <h2><%= @product.name %></h2>
-  </div>
-</div>
 
+  <div class="product-title">
+    <h5><%= @product.name %></h5>
+  </div>
+</div> -->
+
+
+
+<br>
+<br>
+<br>
 <div class="text">
   <div>
-    <% if @product&.fully_recyclability.round == 100 %>
+    <% if @product&.fully_recyclability.round == 100  && @product.photo.attached?%>
       <div class="recyclable-message">
+        <div><%= cl_image_tag @product.photo.key, height: 150, width: 150, crop: :fill %></div>
+        <!-- <h5><%= @product.name %></h5> -->
       <p style="font-size: 24px;">Great news!</p>
+        <h5><%= @product.name %></h5>
       <div style="font-size: 60px; color: green">
         <i class="far fa-check-circle"></i> </div>
           <ul style="list-style-type: none; margin: 0px; padding: 0px">
@@ -38,7 +49,7 @@
         <div class="tip"><strong>TIP:</strong> Empty and rinse before recycling! Food and liquid can spoil whole loads of recycling which then end up in landfill or incinerated.
         </div>
         <div class="zizi">
-          <%= link_to "Search another item", user_path(current_user) %>
+          <%= link_to "Search another item", root_path(current_user) %>
         </div>
     <% elsif @product&.fully_recyclability.round == 0 %>
         <div class="recyclable-message">
