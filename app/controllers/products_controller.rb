@@ -10,11 +10,11 @@ class ProductsController < ApplicationController
       # @products = Product.all
       
       if params[:query].present?
-        @products = Product.where("name ILIKE ?", "%#{params[:query]}%")
+        @products = Product.where("name ILIKE ?", "%#{params[:query]}%").includes(:favorites)
       else
-        @products = Product.all
+        @products = Product.all.includes(:favorites)
       end
-      @products = Product.where(user: current_user) if current_user.producer
+      @products = Product.where(user: current_user).includes(:favorites) if current_user.producer
     end
 
     def new
