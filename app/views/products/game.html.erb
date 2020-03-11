@@ -7,8 +7,9 @@
 
 <div class="container">
 
-  <h1>New Game</h1>
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <h1 id="title">New Game</h1>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="false">
     <ol class="carousel-indicators">
       <% @products.each_with_index do |product, index| %>
         <% if index == 0 %>
@@ -25,17 +26,17 @@
         <div><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %></div>
         <h5><%= product.name %></h5>
         <div class="carousel-answer-option-wrapper">
-          <%= content_tag "div", id: "green-answer", data: {recyclability: product.fully_recyclability} do %>
+          <%= content_tag "div", id: "green-answer#{index}", class: "green-answer", data: {recyclability: product.fully_recyclability} do %>
             <div style="font-size: 45px; color: green">
               <i class="far fa-check-circle"></i>
             </div>
           <% end %>
-          <div style="font-size: 45px; color: red", id="secondtest">
+          <div style="font-size: 45px; color: red" class="red-answer" id="red-answer<%= index %>">
             <i class="fas fa-exclamation-circle"></i>
           </div>
-          <div style="font-size: 45px; color: orange" >
+         <!--  <div style="font-size: 45px; color: orange" >
             <i class="fas fa-exclamation-circle"></i>
-          </div>
+          </div> -->
         </div>
       </div>
       <% else %>
@@ -43,21 +44,22 @@
           <div><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %></div>
           <h5><%= product.name %></h5>
           <div class="carousel-answer-option-wrapper">
-            <%= content_tag "div", id: "green-answer", data: {recyclability: product.fully_recyclability} do %>
+            <%= content_tag "div", id: "green-answer#{index}", class: "green-answer", data: {recyclability: product.fully_recyclability} do %>
               <div style="font-size: 45px; color: green">
                 <i class="far fa-check-circle"></i>
               </div>
             <% end %>
-            <div style="font-size: 45px; color: red">
+            <div style="font-size: 45px; color: red" class="red-answer" id="red-answer<%= index %>">
               <i class="fas fa-exclamation-circle"></i>
             </div>
-            <div style="font-size: 45px; color: orange">
+            <!-- <div style="font-size: 45px; color: orange">
               <i class="fas fa-exclamation-circle"></i>
-            </div>
+            </div> -->
           </div>
         </div>
       <% end %>
     <% end %>
+
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -68,6 +70,7 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+
 </div>
 
 
