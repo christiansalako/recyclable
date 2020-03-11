@@ -9,8 +9,8 @@
       <div><div class="text-cards"><%= link_to product.name, product_path(product)%></div>
       <div class="card-action-buttons">
         <div><%= link_to "<i class='fas fa-trash'></i>".html_safe, product_path(product), method: :delete, data: { confirm: "Are you sure?" } %></div>|<div><%= link_to "<i class='fas fa-edit'></i>".html_safe, edit_product_path(product)%></div>
-      </div> 
-      </div> 
+      </div>
+      </div>
       <% if product&.fully_recyclability.round == 100 %>
       <div style="font-size: 30px; color: green; padding-top: 7px; padding-right: 7px;">
         <i class="far fa-check-circle"></i> </div>
