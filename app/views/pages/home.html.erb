@@ -2,7 +2,7 @@
 
       <!-- Recyclable logo-->
 
-  <%= image_tag 'main-logo.png', class: 'mainlogo'%>
+ <div style="margin-top: 60px"><%= image_tag 'main-logo.png', class: 'mainlogo'%> </div>
 
 
        <!-- If user signed in section logic-->
@@ -19,13 +19,7 @@
 
         <!-- Consumer navbar-->
 
-  <ul class="navbar-recyclable">
-    <li>
-      <!-- <a class="logo-navbar" href="/users/2"><img src="/assets/main-logo-119befbe4a4da145c246c287a29680ebaea1c71c15f026559f564834c184ed9c.png"></a> -->
-    </li>
-    <li> <%= link_to "Play the game", game_products_path %> </li>
-    <li><%= link_to "Sign out", destroy_user_session_path(@user), method: :delete %></li>
-  </ul>
+ <%= render "shared/navbar"%>
 
     <div class="consumer-container">
       <div class="textbox">

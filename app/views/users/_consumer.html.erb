@@ -1,13 +1,9 @@
 <div class="container-index">
-  <ul class= "navbar-recyclable">
-    <li style="padding-top: 12px; padding-right: 10px;">
-      <%= link_to "Back", root_path(current_user) %></li>
-    <li><%= link_to image_tag('main-logo.png'), user_path(current_user), class: "logo-navbar"%></li>
-  </ul>
+  <%= render "shared/navbar"%>
 
 
   <div class="search-container">
-  <h1>My favourites</h1>
+  <h2>My favourites</h2>
     <% @user.favorites.each do |favorite|%>
       <div class="card-box">
         <div class="images"> <%= cl_image_tag favorite.product.photo.key, height: 100, width: 100, crop: :fill %></div>
