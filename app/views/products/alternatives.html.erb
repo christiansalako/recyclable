@@ -1,11 +1,13 @@
 <%
 =begin%>
- <div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" > 
+ <div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >
 <%
 =end%>
+<div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh; background-repeat: repeat" >
+
 <div class="container-index">
 <%= render "shared/navbar"%>
-  <div class="heading5" style="padding-top: 65px;">
+  <div class="heading55" style="padding-top: 65px;">
     <h5> Similar content, better packaging!<br> <%= @alternatives.count %> alternatives for you!</h5>
   </div>
 
@@ -30,7 +32,7 @@
             <%= link_to favorite_path(product.favorites.find_by_user_id(current_user.id)), method: :delete, remote: true, class: "favorite-star" do %>
               <i class="fas fa-star"></i>
             <%end%>
-    <%end%> 
+    <%end%>
 <%
 =end%>
 </div>
