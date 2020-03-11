@@ -1,10 +1,38 @@
+<div class="container-index">
+  <ul class= "navbar-recyclable">
+    <li style="padding-top: 12px; padding-right: 10px;">
+      <%= link_to "Back", root_path(current_user) %></li>
+    <li><%= link_to image_tag('main-logo.png'), user_path(current_user), class: "logo-navbar"%></li>
+  </ul>
 
-<div class="consumer-page" style="background-image: url(<%=  asset_path('signin.png') %>); background-size: cover; background-position: center;">
-  <%= image_tag 'main-logo.png', class: "mainlogo2" %>
 
-  <div class="consumer-container">
+  <div class="search-container">
+  <h1>My favourites</h1>
+    <% @user.favorites.each do |favorite|%>
+      <div class="card-box">
+        <div class="images"> <%= cl_image_tag favorite.product.photo.key, height: 100, width: 100, crop: :fill %></div>
+        <% if favorite.product&.fully_recyclability.round == 100 %>
+          <div style="font-size: 30px; color: green; padding-top: 7px; padding-right: 7px;">
+            <i class="far fa-check-circle"></i>
+          </div>
+        <% elsif favorite.product&.fully_recyclability.round == 0 %>
+          <div style="font-size: 30px; color: red; padding-top: 7px; padding-right: 7px;">
+            <i class="fas fa-exclamation-circle"></i>
+          </div>
+        <%else%>
+          <div style="font-size: 30px; color: orange; padding-top: 7px; padding-right: 7px;">
+            <i class="fas fa-exclamation-circle"></i>
+          </div>
+        <%end%>
+        <div class="text">
+          <%= link_to favorite.product.name, product_path(favorite)%>
+        </div>
+      </div>
+    <%end%>
+
+
     <div class="textbox">
-     Search any item below to find out information on its recyclability
+      Search any item below to find out information on its recyclability
     </div>
     <div class="consumerheading">
      <p class="m-0"> Let's sort it out!</p>
@@ -22,8 +50,8 @@
           </div>
         <% end %>
       </div>
-
     </div>
   </div>
- <p><%= link_to "Sign out", destroy_user_session_path, method: :delete %></p>
-
+  <div class="signoutbtn">
+ <p><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "bizi" %></p>
+</div>

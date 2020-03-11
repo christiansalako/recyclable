@@ -25,35 +25,31 @@
   </div>
 </div> -->
 
-
-
-<br>
-<br>
-<br>
 <div class="text">
   <div>
     <% if @product&.fully_recyclability.round == 100  && @product.photo.attached?%>
       <div class="recyclable-message">
-        <div><%= cl_image_tag @product.photo.key, height: 150, width: 150, crop: :fill %></div>
-        <!-- <h5><%= @product.name %></h5> -->
-      <p style="font-size: 24px;">Great news!</p>
-        <h5><%= @product.name %></h5>
-      <div style="font-size: 60px; color: green">
-        <i class="far fa-check-circle"></i> </div>
+        <p style="font-size: 24px;">Great news!</p>
+          <div><%= cl_image_tag @product.photo.key, height: 150, width: 150, crop: :fill %></div>
+          <!-- <h5><%= @product.name %></h5> -->
+          <h5 class="product-name"><%= @product.name %></h5>
+        <div style="font-size: 60px; color: green">
+          <i class="far fa-check-circle"></i> 
+        </div>
           <ul style="list-style-type: none; margin: 0px; padding: 0px">
-          <% @materials.each do |material|%>
-            <li>This item is made of: <%= material.name %></li>
+        <% @materials.each do |material|%>
+          <li>This item is made of: <%= material.name %></li>
           <%end%>
           </ul>
         <p>The packaging is therefore fully recyclable and can go straight into your recycling bin.</p>
         <div class="tip"><strong>TIP:</strong> Empty and rinse before recycling! Food and liquid can spoil whole loads of recycling which then end up in landfill or incinerated.
         </div>
-        <div class="zizi">
-          <%= link_to "Search another item", root_path(current_user) %>
-        </div>
+        <div class="zizi"><%= link_to "Search another item", root_path(current_user)%></div>
     <% elsif @product&.fully_recyclability.round == 0 %>
         <div class="recyclable-message">
           <p style="font-size: 24px;">Not so great!</p>
+          <div><%= cl_image_tag @product.photo.key, height: 150, width: 150, crop: :fill %></div>
+          <h5 class="product-name"><%= @product.name %></h5>
         <div style="font-size: 60px; color: red">
           <i class="fas fa-exclamation-circle"></i></div>
           <ul style="list-style-type: none; margin: 0px; padding: 0px">
@@ -71,6 +67,8 @@
         <% not_recyclable_materials = @materials - recyclable_materials %>
           <div class="recyclable-message">
             <p style="font-size: 24px;">Not too bad, almost there!</p>
+            <div><%= cl_image_tag @product.photo.key, height: 150, width: 150, crop: :fill %></div>
+            <h5 class="product-name"><%= @product.name %></h5>
             <div style="font-size: 60px; color: orange">
               <i class="fas fa-exclamation-circle"></i></div>
               <p>This item is made up of different materials. Before putting it into the bin, let's separate the components!</p>
