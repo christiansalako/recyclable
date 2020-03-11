@@ -9,17 +9,18 @@
 
 
   <% if !user_signed_in? %>
-  <div class="textbox">
+    <div class="textbox">
       Recycling can be confusing but it doesn't have to be.<br>
       Sign in and sort it out!
-      </div>
+    </div>
     <%= link_to "Sign up", new_user_registration_path, class: "btn sign-up-btn"%>
     <%= link_to "Sign in", new_user_session_path, class: "btn sign-in-btn" %>
-  <% else  %>
 
+  <% elsif user_signed_in? && current_user.producer  %>
+    <%= render 'users/producer' %>
         <!-- Consumer navbar-->
-
- <%= render "shared/navbar"%>
+  <% else %>
+    <%= render "shared/navbar"%>
 
     <div class="consumer-container">
       <div class="textbox">
