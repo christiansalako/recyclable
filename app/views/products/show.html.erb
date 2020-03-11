@@ -6,79 +6,84 @@
 =end%>
 
 <div class="container-index">
-
-<ul class= "navbar-recyclable">
-  <li style="padding-top: 12px; padding-right: 10px;"><%= link_to "Add another Item", new_product_path(current_user) %></li>
-  <li><%= link_to image_tag('main-logo.png'), user_path(current_user), class: "logo-navbar"%></li>
-  </ul>
-<div class="search-result-card" style="margin-top: 80px;">
-  <% if @product.photo.attached? %>
-  <div class= "pic">
-    <%= cl_image_tag @product.photo.key, height: 100, width: 100, crop: :fill %>
-  <% end %>
-  </div>
-  <div class="product-title">
-    <h2><%= @product.name %></h2>
-  </div>
-</div>
+<%= render "shared/navbar"%>
 
 <div class="text">
   <div>
-    <% if @product&.fully_recyclability.round == 100 %>
+    <% if @product&.fully_recyclability.round == 100  && @product.photo.attached?%>
       <div class="recyclable-message">
-      <p style="font-size: 24px;">Great news!</p>
-      <div style="font-size: 60px; color: green">
-        <i class="far fa-check-circle"></i> </div>
+        <p style="font-size: 24px;">Great news!</p>
+          <div><%= cl_image_tag @product.photo.key, height: 150, width: 150, crop: :fill %></div>
+          <h5 class="product-name"><%= @product.name %></h5>
+        <div style="font-size: 60px; color: green">
+          <i class="far fa-check-circle"></i> 
+        </div>
           <ul style="list-style-type: none; margin: 0px; padding: 0px">
-          <% @materials.each do |material|%>
-            <li>This item is made of: <%= material.name %></li>
+        <% @materials.each do |material|%>
+          <li>This item is made of: <%= material.name %></li>
           <%end%>
           </ul>
         <p>The packaging is therefore fully recyclable and can go straight into your recycling bin.</p>
         <div class="tip"><strong>TIP:</strong> Empty and rinse before recycling! Food and liquid can spoil whole loads of recycling which then end up in landfill or incinerated.
         </div>
-        <div class="zizi">
-          <%= link_to "Search another item", user_path(current_user) %>
-        </div>
+        <div class="zizi"><%= link_to "Search another item", root_path(current_user)%></div>
     <% elsif @product&.fully_recyclability.round == 0 %>
-        <div class="recyclable-message">
-          <p style="font-size: 24px;">Not so great!</p>
-        <div style="font-size: 60px; color: red">
-          <i class="fas fa-exclamation-circle"></i></div>
-          <ul style="list-style-type: none; margin: 0px; padding: 0px">
-            <% @materials.each do |material|%>
-              <li>This item is made of: <%= material.name %></li>
-            <%end%>
-          </ul>
-        <p>This type of material cannot be recycled! Make sure you put it into the general waste bin.</p>
-        <div class="tip"><strong>TIP:</strong> Buy more sustainable products in the future!</div>
-        <div class="zizi">
-          <%= link_to "We found these alternatives for you!", alternatives_product_path(@product) %>
-        </div>
+      <div class="recyclable-message">
+        <p style="font-size: 24px;">Not so great!</p>
+      <div><%= cl_image_tag @product.photo.key, height: 150, width: 150, crop: :fill %></div>
+      <h5 class="product-name"><%= @product.name %></h5>
+    <div style="font-size: 60px; color: red">
+      <i class="fas fa-exclamation-circle"></i></div>
+      <ul style="list-style-type: none; margin: 0px; padding: 0px">
+        <% @materials.each do |material|%>
+          <li>This item is made of: <%= material.name %></li>
+        <%end%>
+      </ul>
+    <p>This type of material cannot be recycled! Make sure you put it into the general waste bin.</p>
+    <div class="tip"><strong>TIP:</strong> Buy more sustainable products in the future!</div>
+    <div class="zizi">
+      <%= link_to "Search alternatives!", alternatives_product_path(@product) %>
+    </div>
     <% else %>
         <% recyclable_materials = @materials.select {|material| material.recyclability}  %>
         <% not_recyclable_materials = @materials - recyclable_materials %>
+        
           <div class="recyclable-message">
-            <p style="font-size: 24px;">Not too bad, almost there!</p>
-            <div style="font-size: 60px; color: orange">
-              <i class="fas fa-exclamation-circle"></i></div>
-              <p>This item is made up of different materials. Before putting it into the bin, let's separate the components!</p>
-          <% if recyclable_materials.any?%>
-            <ul style="list-style-type: none; margin: 0px; padding: 0px">
-              <% recyclable_materials.each do |material|%>
-              <li>Recyclable material: <%= material.name%></li>
-              <%end%>
-            </ul>
-          <%end%>
-            <ul style="list-style-type: none; margin: 0px; padding: 0px">
-              <% not_recyclable_materials.each do |material|%>
-              <li>Non recyclable material: <%= material.name%></li>
-              <%end%>
-              </ul>
-        <div class="tip"><strong>TIP:</strong>Buy more sustainable products in the future.</div>
-        <div class="zizi">
-        <%= link_to "We found these alternatives for you!", alternatives_product_path(@product) %>
-        </div>
+            <p style="font-size: 18px;"><%= @product.name %></p>
+            <div class="product-image"><%= cl_image_tag @product.photo.key, height: 150, width: 150, crop: :fill %></div>
+              <p>This item is made of different materials. Before putting it into the bin, let's separate the components!</p>
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Recyclable</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Non Recyclable</a>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <% if recyclable_materials.any?%>
+                  <% recyclable_materials.each do |material|%>
+                  <li style="list-style-type: none; margin-top:18px;"><%= material.name%></li>
+                  <%end%>
+                  <div style="font-size: 30px; color: green; padding-top: 7px; padding-right: 7px;">
+                  <i class="far fa-check-circle"></i>
+                  </div>
+                <% else%>
+                <li>No recyclable materials</li>
+                <%end%>
+                </div>
+                  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                  <% not_recyclable_materials.each do |material|%>
+                  <li style="list-style-type: none;  margin-top:18px;"><%= material.name%></li>
+                  <%end%>
+                  <div style="font-size: 30px; color: red; padding-top: 7px; padding-right: 7px;">
+                    <i class="fas fa-exclamation-circle"></i>
+                  </div>
+                  </div>
+              </div>
+            <div class="tip"><strong>TIP:</strong> Buy more sustainable products in the future.</div>
+            <div class="zizi">
+            <%= link_to "Search alternatives!", alternatives_product_path(@product) %>
+            </div>
     <% end %>
 </div>
 </div>

@@ -1,12 +1,20 @@
+<!-- Start of page -->
+
 <div class="container">
+
 <div class="container-index">
-<ul class= "navbar-recyclable">
+  <%
+=begin%>
+ <ul class= "navbar-recyclable">
+    <li class="newzi"><%= link_to "New search", user_path(current_user), class: "newzi2" %></li>
+    <li><%= link_to image_tag('main-logo.png'), user_path(current_user), class: "logo-navbar"%></li>
+  </ul> 
+<%
+=end%>
 
-  <li class="newzi"><%= link_to "New search", user_path(current_user), class: "newzi2" %></li>
-
-  <li><%= link_to image_tag('main-logo.png'), user_path(current_user), class: "logo-navbar"%></li>
-  </ul>
-   <div class="heading5 margin-50">
+<%= render "shared/navbar"%>
+  
+  <div class="heading5 margin-50">
   <h5> We found <%= @products.count %> products for you!</h5>
     </div>
     </div>
@@ -15,10 +23,11 @@
       <% @products.each do |product| %>
         <div id="card-<%= product.id %>" class="card-box">
           <div class="images"><%= cl_image_tag product.photo.key, height: 100, width: 100, crop: :fill if product.photo.attached? %></div>
-          <div class="text"><p><%= link_to product.name, product_path(product)%></p> </div>
           <% if product&.fully_recyclability.round == 100 %>
+            <div class="star1">
             <div style="font-size: 30px; color: green; padding-top: 7px; padding-right: 7px;">
               <i class="far fa-check-circle"></i>
+            </div>
             </div>
           <% elsif product&.fully_recyclability.round == 0 %>
             <div style="font-size: 30px; color: red; padding-top: 7px; padding-right: 7px;">
@@ -29,14 +38,15 @@
               <i class="fas fa-exclamation-circle"></i>
             </div>
           <%end%>
+          <div class="text"><p><%= link_to product.name, product_path(product)%></p> </div>
           <% if product.favorites.where(user: current_user).empty? %>
             <%= simple_form_for [product, Favorite.new], remote: true do |f| %>
-              <%= f.button :button, type: :submit do %>
+              <%= f.button :button, type: :submit, class: "favorite-star" do %>
                 <i class="far fa-star"></i>
               <% end %>
             <%end%>
           <% else %>
-            <%= link_to favorite_path(product.favorites.find_by_user_id(current_user.id)), method: :delete, remote: true do %>
+            <%= link_to favorite_path(product.favorites.find_by_user_id(current_user.id)), method: :delete, remote: true, class: "favorite-star" do %>
               <i class="fas fa-star"></i>
             <%end%>
           <%end%>
