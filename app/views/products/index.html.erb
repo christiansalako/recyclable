@@ -14,7 +14,8 @@
 
 <%= render "shared/navbar"%>
     </div>
-
+  <div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh; background-repeat: repeat" >
+  <div style="background-color: #4bc999; height: 30px; width: 100%; margin-top: 70px"></div>
     <div class="card-wrapper">
        <h5> We found <%= @products.count %> products for you!</h5>
     <% if @products.any? %>
