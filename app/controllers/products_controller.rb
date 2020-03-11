@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
       @product.update(product_params)
       if @product.save
-        redirect_to product_path(@product)
+        redirect_to user_path(current_user)
       else
         render :edit
       end

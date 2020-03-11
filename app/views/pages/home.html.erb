@@ -2,19 +2,24 @@
 
       <!-- Recyclable logo-->
 
- <div style="margin-top: 60px"><%= image_tag 'main-logo.png', class: 'mainlogo'%> </div>
+      <div style="margin-top: 60px">
 
+<!--  <div style="margin-top: 60px"><%= image_tag 'main-logo.png', class: 'mainlogo'%> </div>
+ -->
 
        <!-- If user signed in section logic-->
 
 
   <% if !user_signed_in? %>
+  <div style="margin-top: 60px"><%= image_tag 'main-logo.png', class: 'mainlogo'%> </div>
+
     <div class="textbox">
       Recycling can be confusing but it doesn't have to be.<br>
       Sign in and sort it out!
     </div>
     <%= link_to "Sign up", new_user_registration_path, class: "btn sign-up-btn"%>
     <%= link_to "Sign in", new_user_session_path, class: "btn sign-in-btn" %>
+
   <% elsif user_signed_in? && current_user.producer  %>
     <%= render 'users/producer' %>
         <!-- Consumer navbar-->
