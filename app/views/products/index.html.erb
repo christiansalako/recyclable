@@ -3,14 +3,18 @@
 <div class="container">
 
 <div class="container-index">
-<ul class= "navbar-recyclable">
+  <%
+=begin%>
+ <ul class= "navbar-recyclable">
+    <li class="newzi"><%= link_to "New search", user_path(current_user), class: "newzi2" %></li>
+    <li><%= link_to image_tag('main-logo.png'), user_path(current_user), class: "logo-navbar"%></li>
+  </ul> 
+<%
+=end%>
 
-  <li class="newzi"><%= link_to "New search", user_path(current_user), class: "newzi2" %></li>
-
-  <li><%= link_to image_tag('main-logo.png'), user_path(current_user), class: "logo-navbar"%></li>
-  </ul>
-   <div class="heading5 margin-50">
-
+<%= render "shared/navbar"%>
+  
+  <div class="heading5 margin-50">
   <h5> We found <%= @products.count %> products for you!</h5>
     </div>
     </div>
