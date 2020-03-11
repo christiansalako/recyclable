@@ -1,9 +1,5 @@
 <div class="container-index">
-  <ul class= "navbar-recyclable">
-    <li style="padding-top: 12px; padding-right: 10px;">
-      <%= link_to "Back", root_path(current_user) %></li>
-    <li><%= link_to image_tag('main-logo.png'), user_path(current_user), class: "logo-navbar"%></li>
-  </ul>
+   <%= render "shared/navbar_producer"%>
 
 <div class="dashboard-content">
 <p>My products</p>
