@@ -15,6 +15,7 @@
     </div>
     <%= link_to "Sign up", new_user_registration_path, class: "btn sign-up-btn"%>
     <%= link_to "Sign in", new_user_session_path, class: "btn sign-in-btn" %>
+
   <% elsif user_signed_in? && current_user.producer  %>
     <%= render 'users/producer' %>
         <!-- Consumer navbar-->
