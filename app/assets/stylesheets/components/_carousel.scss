@@ -24,5 +24,13 @@
 }
 
  #title {
-  padding-bottom:150px;
+  padding:50px 30px;
  }
+
+div.carousel-item.recyclable-message.active{
+  border: 2px solid black;
+}
+
+div.carousel-item.recyclable-message {
+  border: 2px solid black;
+}
