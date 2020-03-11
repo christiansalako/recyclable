@@ -16,8 +16,21 @@
       <div class="text"><p> <%= link_to alternative.name, product_path(alternative)%></p></div>
       <div style="font-size: 30px; color: green; padding-top: 7px; padding-right: 7px;">
         <i class="far fa-check-circle"></i> </div>
+      <% if alternative.favorites.where(user: current_user).empty? %>
+              <%= simple_form_for [alternative, Favorite.new], remote: true do |f| %>
+                <%= f.button :button, type: :submit, class: "favorite-star" do %>
+                  <i class="far fa-star"></i>
+                <% end %>
+              <%end%>
+            <% else %>
+              <%= link_to favorite_path(alternative.favorites.find_by_user_id(current_user.id)), method: :delete, remote: true, class: "favorite-star" do %>
+                <i class="fas fa-star"></i>
+              <%end%>
+      <%end%> 
     </div>
+    
   <% end %>
-  <%= link_to "back to results", product_path(@product) %>
+    
+ 
 
 </div>

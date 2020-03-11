@@ -1,6 +1,5 @@
 .container{
   text-align: center;
-  background-color: #F9F7E8;
   padding: 0px;
 }
 
@@ -69,4 +68,9 @@ box-shadow: 0 4px 6px 0 #666;
 }
 .nav-item {
   width: 50%;
+}
+
+.card-wrapper{
+  overflow: scroll;
+  height: 90vh;
 }

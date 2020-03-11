@@ -1,5 +1,3 @@
-
-
 .carousel-answer-option-wrapper {
   display: flex;
   flex-direction: row;
@@ -7,22 +5,23 @@
 
 }
 
-
-
 .carousel-inner .recyclable-message {
   background-color:gold;
+  height: 320px;
 }
 
-
-
-
 #carouselExampleIndicators{
-  max-width: 350px;
+  max-width: 360px;
   margin: auto;
 
 
 }
 
  #title {
-  padding-bottom:150px;
- }
+padding:50px 30px;
+}
+
+.recyclable-message  {
+  border : 2px solid black;
+
+}
