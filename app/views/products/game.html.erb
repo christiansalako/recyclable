@@ -6,7 +6,7 @@
   </ul> -->
 
 <div class="container">
-  <a href="..." class="btn btn-primary">Click me</a>
+
   <h1>New Game</h1>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -25,13 +25,15 @@
         <div><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %></div>
         <h5><%= product.name %></h5>
         <div class="carousel-answer-option-wrapper">
-          <div style="font-size: 45px; color: green", id="test">
-            <i class="far fa-check-circle"></i>
-          </div>
-          <div style="font-size: 45px; color: red">
+          <%= content_tag "div", id: "green-answer", data: {recyclability: product.fully_recyclability} do %>
+            <div style="font-size: 45px; color: green">
+              <i class="far fa-check-circle"></i>
+            </div>
+          <% end %>
+          <div style="font-size: 45px; color: red", id="secondtest">
             <i class="fas fa-exclamation-circle"></i>
           </div>
-          <div style="font-size: 45px; color: orange">
+          <div style="font-size: 45px; color: orange" >
             <i class="fas fa-exclamation-circle"></i>
           </div>
         </div>
@@ -41,9 +43,11 @@
           <div><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %></div>
           <h5><%= product.name %></h5>
           <div class="carousel-answer-option-wrapper">
-            <div style="font-size: 45px; color: green">
-              <i class="far fa-check-circle"></i>
-            </div>
+            <%= content_tag "div", id: "green-answer", data: {recyclability: product.fully_recyclability} do %>
+              <div style="font-size: 45px; color: green">
+                <i class="far fa-check-circle"></i>
+              </div>
+            <% end %>
             <div style="font-size: 45px; color: red">
               <i class="fas fa-exclamation-circle"></i>
             </div>
