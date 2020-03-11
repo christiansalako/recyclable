@@ -1,9 +1,9 @@
 
 
-<div class="container">
+<div class="container ">
 <%= render "shared/navbar"%>
 
-  <div>
+  <div class="game-page">
     <h1 id="title">New Game</h1>
     <h3>Test your knowledge by guessing what items can be recycled</h3>
   </div>
@@ -22,7 +22,7 @@
       <% @products.each_with_index do |product, index| %>
       <% if index == 0 %>
       <div class="carousel-item active">
-        <div class="recyclable-message">
+        <div class="recyclable-message-game">
           <div><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %></div>
           <h5><%= product.name %></h5>
           <div class="carousel-answer-option-wrapper">
@@ -42,7 +42,7 @@
       </div>
       <% else %>
         <div class="carousel-item">
-          <div class="recyclable-message">
+          <div class="recyclable-message-game">
             <div><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %></div>
             <h5><%= product.name %></h5>
             <div class="carousel-answer-option-wrapper">
