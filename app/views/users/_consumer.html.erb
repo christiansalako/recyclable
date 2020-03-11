@@ -1,3 +1,5 @@
+<div style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh; background-repeat: repeat" >
+
 <div class="container-index">
   <%= render "shared/navbar"%>
 
@@ -51,7 +53,7 @@
     </div>
   </div>
   <div class="signoutbtn">
- <p><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "bizi" %></p> 
+ <p><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "bizi" %></p>
 <%
 =end%>
 </div>
