@@ -21,13 +21,15 @@
           </div>
         <%end%>
         <div class="text">
-          <%= link_to favorite.product.name, product_path(favorite)%>
+          <%= link_to favorite.product.name, product_path(favorite.product_id)%>
         </div>
       </div>
     <%end%>
 
 
-    <div class="textbox">
+    <%
+=begin%>
+ <div class="textbox">
       Search any item below to find out information on its recyclability
     </div>
     <div class="consumerheading">
@@ -49,5 +51,7 @@
     </div>
   </div>
   <div class="signoutbtn">
- <p><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "bizi" %></p>
+ <p><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "bizi" %></p> 
+<%
+=end%>
 </div>
