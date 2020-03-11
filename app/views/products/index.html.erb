@@ -8,17 +8,15 @@
  <ul class= "navbar-recyclable">
     <li class="newzi"><%= link_to "New search", user_path(current_user), class: "newzi2" %></li>
     <li><%= link_to image_tag('main-logo.png'), user_path(current_user), class: "logo-navbar"%></li>
-  </ul> 
+  </ul>
 <%
 =end%>
 
 <%= render "shared/navbar"%>
-  
-  <div class="heading5 margin-50">
-  <h5> We found <%= @products.count %> products for you!</h5>
-    </div>
     </div>
 
+    <div class="card-wrapper">
+       <h5> We found <%= @products.count %> products for you!</h5>
     <% if @products.any? %>
       <% @products.each do |product| %>
         <div id="card-<%= product.id %>" class="card-box">
@@ -52,6 +50,7 @@
           <%end%>
         </div>
       <% end %>
+    </div>
     <% else %>
       <h2>
         Sorry no product found !
