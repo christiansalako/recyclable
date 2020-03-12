@@ -47,6 +47,8 @@ document.addEventListener('turbolinks:load', () => {
     button.addEventListener('click', (event) => {
       console.log('Hello world', button.dataset.recyclability)
       if (button.dataset.recyclability == 0.0) {
+        confettiElement.style.display = 'block';
+        document.querySelector('.carouselbg').style.background = 'transparent';
         confetti.render();
         Swal.fire ({
           icon: 'success',
@@ -75,6 +77,7 @@ document.addEventListener('turbolinks:load', () => {
     button.addEventListener('click', (event) => {
       console.log(button.dataset.recyclability)
       if (button.dataset.recyclability == 50.0) {
+        confettiElement.style.display = 'block';
         confetti.render();
         Swal.fire ({
           icon: 'success',
