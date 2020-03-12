@@ -56,10 +56,14 @@ document.addEventListener('turbolinks:load', () => {
           location.reload()
         })
       } else {
+        confetti.render();
         Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'You got that one wrong!',
+          icon: 'success',
+          title: 'You go that right!'
+        })
+        document.querySelector('.swal2-confirm').addEventListener('click', (event) => {
+          // confetti.clear()
+          location.reload()
         })
       }
     })
