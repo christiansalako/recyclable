@@ -1,3 +1,8 @@
+body {
+  color: pink;
+}
+
+
 .carousel-answer-option-wrapper {
   display: flex;
   flex-direction: row;
@@ -17,16 +22,24 @@
 
 }
 
- #title {
-padding:50px 30px;
+.game-text{
+font-family: 'Luckiest Guy', cursive;
+color: #d65555;
 }
 
 .recyclable-message-game  {
-  border : 2px solid black;
+  border : 1px solid black;
+  border-radius: 30px;
 
 }
 
 
-.game-page{
-  padding-top: 40px;
+.game-image {
+  padding:20px;
+}
+
+
+.game-title {
+  color: #382626;
+  font-size: initial;
 }
