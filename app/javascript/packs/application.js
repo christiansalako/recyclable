@@ -58,7 +58,8 @@ document.addEventListener('turbolinks:load', () => {
           location.reload()
         })
       } else {
-        confetti.render();
+          confettiElement.style.display = 'block';
+          confetti.render();
         Swal.fire({
           icon: 'success',
           title: 'You go that right!'
