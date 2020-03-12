@@ -75,7 +75,7 @@
         <% recyclable_materials = @materials.select {|material| material.recyclability}  %>
         <% not_recyclable_materials = @materials - recyclable_materials %>
           <div class="recyclable-message">
-            <h5><%= @product.name %></h5>
+            <h5 class="product-name"><%= @product.name %></h5>
             <div class="product-image"><%= cl_image_tag @product.photo.key, height: 150, width: 150, crop: :fill %></div>
               <p style="font-weight: 600; padding-bottom:10px">This item is made of different materials. Before putting it into the bin, let's separate the components!</p>
             <nav>
