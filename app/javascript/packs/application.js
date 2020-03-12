@@ -44,10 +44,15 @@ document.addEventListener('turbolinks:load', () => {
   secondButton.forEach((button) => {
     button.addEventListener('click', (event) => {
       if (button.dataset.recyclability == 0) {
+        confetti.render();
         Swal.fire ({
           icon: 'Good job!',
           title: 'You go that right!',
           text: 'success'
+        })
+        document.querySelector('.swal2-confirm').addEventListener('click', (event) => {
+          // confetti.clear()
+          location.reload()
         })
       } else {
         Swal.fire({
@@ -64,11 +69,15 @@ document.addEventListener('turbolinks:load', () => {
       console.log(button.dataset.recyclability)
       console.log(button.dataset.recyclability > 0 && button.dataset.recyclability < 100)
       if (button.dataset.recyclability > 0 && button.dataset.recyclability < 100) {
-        console.log(button.dataset.recyclability)
+        confetti.render();
         Swal.fire ({
           icon: 'Good job!',
           title: 'You go that right!',
           text: 'success'
+        })
+        document.querySelector('.swal2-confirm').addEventListener('click', (event) => {
+          // confetti.clear()
+          location.reload()
         })
       } else {
         Swal.fire({
@@ -81,14 +90,6 @@ document.addEventListener('turbolinks:load', () => {
   })
 })
 
-
-
-
-
-// var confettiElement = document.getElementById('my-canvas');
-// var confettiSettings = { target: confettiElement };
-// var confetti = new ConfettiGenerator(confettiSettings);
-// confetti.render();
 
 
 
