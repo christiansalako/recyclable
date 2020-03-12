@@ -3,38 +3,46 @@
 <div class="container ">
 <%= render "shared/navbar"%>
 
-  <div class="game-page">
-    <h1 id="title">New Game</h1>
-    <h3>Test your knowledge by guessing what items can be recycled</h3>
-  </div>
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="false">
+
     <ol class="carousel-indicators">
+
       <% @products.each_with_index do |product, index| %>
+
         <% if index == 0 %>
           <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+
         <% else %>
           <li data-target="#carousel-example-generic" data-slide-to="#{index}"></li>
         <% end %>
       <% end %>
+
     </ol>
+
+
+    <canvas id="my-canvas"></canvas>
+    <h3 class="game-text">Test <u> your</u> knowledge by guessing what items can be recycled</h3>
     <div class="carousel-inner">
       <% @products.each_with_index do |product, index| %>
+
       <% if index == 0 %>
       <div class="carousel-item active">
         <div class="recyclable-message-game">
-          <div><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %></div>
-          <h5><%= product.name %></h5>
+          <div class="game-image"><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %></div>
+          <h5 class= "game-title"><%= product.name %></h5>
           <div class="carousel-answer-option-wrapper">
             <%= content_tag "div", id: "green-answer#{index}", class: "green-answer", data: {recyclability: product.fully_recyclability} do %>
               <div style="font-size: 45px; color: green">
                 <i class="far fa-check-circle"></i>
+
+
               </div>
             <% end %>
             <div style="font-size: 45px; color: red" class="red-answer" id="red-answer<%= index %>">
               <i class="fas fa-exclamation-circle"></i>
             </div>
-            <div style="font-size: 45px; color: orange" class="orange-answer" >
+            <div style="font-size: 45px; color: orange" class="orange-answer" data-recyclability="<%= product.fully_recyclability %>" >
               <i class="fas fa-exclamation-circle"></i>
             </div>
           </div>
@@ -43,8 +51,8 @@
       <% else %>
         <div class="carousel-item">
           <div class="recyclable-message-game">
-            <div><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %></div>
-            <h5><%= product.name %></h5>
+            <div class="game-image"><%= cl_image_tag product.photo.key, height: 150, width: 150, crop: :fill %></div>
+            <h5 class="game-title"><%= product.name %></h5>
             <div class="carousel-answer-option-wrapper">
               <%= content_tag "div", id: "green-answer#{index}", class: "green-answer", data: {recyclability: product.fully_recyclability} do %>
                 <div style="font-size: 45px; color: green">
@@ -54,7 +62,7 @@
               <div style="font-size: 45px; color: red" class="red-answer" id="red-answer<%= index %>">
                 <i class="fas fa-exclamation-circle"></i>
               </div>
-              <div style="font-size: 45px; color: orange" class="orange-answer">
+              <div style="font-size: 45px; color: orange" class="orange-answer" data-recyclability="<%= product.fully_recyclability %>">
                 <i class="fas fa-exclamation-circle"></i>
               </div>
             </div>
@@ -72,6 +80,9 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
+
+    </div>
+
   </div>
 
 </div>
