@@ -60,11 +60,12 @@ document.addEventListener('turbolinks:load', () => {
           location.reload()
         })
       } else {
-          confettiElement.style.display = 'block';
-          confetti.render();
+        // confettiElement.style.display = 'block';
+        // document.querySelector('.carouselbg').style.background = 'transparent';
+        // confetti.render();
         Swal.fire({
-          icon: 'success',
-          title: 'You go that right!'
+          icon: 'error',
+          title: 'You go that wrong!!!!!'
         })
         document.querySelector('.swal2-confirm').addEventListener('click', (event) => {
           // confetti.clear()
