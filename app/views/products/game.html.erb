@@ -40,7 +40,7 @@
 
               </div>
             <% end %>
-            <div style="font-size: 45px; color: red" class="red-answer" id="red-answer<%= index %>">
+            <div style="font-size: 45px; color: red" class="red-answer" id="red-answer<%= index %>" data-recyclability="<%= product.fully_recyclability %>">
               <i class="fas fa-exclamation-circle"></i>
             </div>
             <div style="font-size: 45px; color: orange" class="orange-answer" data-recyclability="<%= product.fully_recyclability %>" >
@@ -101,11 +101,13 @@
         </button>
       </div>
       <div class="modal-body">
+
         <i class="far fa-check-circle", style="font-size: 20px; color: green;"> </i> Fully recyclable <br>
         <hr>
         <i class="fas fa-exclamation-circle", style="font-size: 20px; color: red;"> </i> It cannot be recycled <br>
         <hr>
         <i class="fas fa-exclamation-circle", style="font-size: 20px; color: orange;"></i> Some of the components are recyclable <br>
+
       </div>
        <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

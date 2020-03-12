@@ -28,29 +28,27 @@
           </div>
         </div>
         <!-- Button trigger modal -->
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Did you know?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <p> Food and liquid can spoil whole loads of recycling which then end up in landfill or incinerated.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: 600;">Did you know?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              <p style="font-size: 18px"> Food and liquid can spoil whole loads of recycling which then end up in landfill or incinerated.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="modal-close" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="tip"><strong>TIP:</strong> Empty and rinse before recycling!
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn btn-primary" id="info-button" data-toggle="modal" data-target="#exampleModal">
           <i class="fas fa-info"></i>
         </button>
         </div>
@@ -60,27 +58,26 @@
       <h5 class="product-name"><%= @product.name %></h5>
       <div><%= cl_image_tag @product.photo.key, height: 150, width: 150, crop: :fill %></div>
       <div class="message-negative">
-      <ul style="list-style-type: none; margin: 0px; padding: 0px">
-        <% @materials.each do |material|%>
-          <li>This item is made of: <%= material.name %></li>
-        <%end%>
-      </ul>
-    <p>This type of material cannot be recycled yet! Make sure you put it into the general waste bin.</p>
-    </div>
-    <div style="font-size: 55px; color: red">
-      <i class="fas fa-exclamation-circle"></i></div>
-    <div class="tip"><strong>TIP:</strong> Buy more sustainable products in the future!</div>
-    <div class="zizi">
-      <%= link_to "Search alternatives!", alternatives_product_path(@product) %>
-    </div>
+        <ul style="list-style-type: none; margin: 0px; padding: 0px">
+          <% @materials.each do |material|%>
+            <li>This item is made of: <%= material.name %></li>
+          <%end%>
+        </ul>
+        <p>Make sure you put it into the general waste bin.</p>
+      </div>
+      <div style="font-size: 55px; color: red">
+        <i class="fas fa-exclamation-circle"></i></div>
+        <div class="tip"><strong>TIP:</strong> Buy more sustainable products in the future!</div>
+      <div class="zizi">
+       <%= link_to "Search alternatives!", alternatives_product_path(@product) %>
+      </div>
     <% else %>
         <% recyclable_materials = @materials.select {|material| material.recyclability}  %>
         <% not_recyclable_materials = @materials - recyclable_materials %>
-
           <div class="recyclable-message">
-            <p style="font-size: 18px;"><%= @product.name %></p>
+            <h5><%= @product.name %></h5>
             <div class="product-image"><%= cl_image_tag @product.photo.key, height: 150, width: 150, crop: :fill %></div>
-              <p>This item is made of different materials. Before putting it into the bin, let's separate the components!</p>
+              <p style="font-weight: 600; padding-bottom:10px">This item is made of different materials. Before putting it into the bin, let's separate the components!</p>
             <nav>
               <div class="nav nav-tabs" id="nav-tab" role="tablist">
                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Recyclable</a>

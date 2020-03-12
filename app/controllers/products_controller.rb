@@ -59,7 +59,7 @@ class ProductsController < ApplicationController
     end
 
     def game
-      @products = Product.all.sample(3)
+      @products = Product.all.sample(15)
 
 
     end

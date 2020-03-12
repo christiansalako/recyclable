@@ -32,14 +32,30 @@
 .product-name {
   margin-top: 20px;
   margin-bottom: 25px;
+  padding: 0 10px;
+}
+
+#info-button {
+  color: black;
+  background-color: lightgrey;
+  border: none;
+  box-shadow: 0 2px 4px 0 #666;
+  margin-left: 10px;
+}
+
+#modal-close {
+  background-color:#1EDD88;
+  border:none;
 }
 
 .message-negative {
   margin-top: 30px;
+  font-weight: 600;
 }
 
 .message-positive {
   margin-top: 30px;
+  font-weight: 600;
 }
 
 .tip {

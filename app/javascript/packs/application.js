@@ -21,14 +21,14 @@ document.addEventListener('turbolinks:load', () => {
   var confetti = new ConfettiGenerator(confettiSettings);
   greenButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
+      console.log(button.dataset.recyclability)
       if (button.dataset.recyclability == 100) {
         confettiElement.style.display = 'block';
         document.querySelector('.carouselbg').style.background = 'transparent';
         confetti.render();
         Swal.fire ({
           icon: 'success',
-          title: 'You go that right!',
-          text: 'success'
+          title: 'You got that right!'
         })
         document.querySelector('.swal2-confirm').addEventListener('click', (event) => {
           // confetti.clear()
@@ -45,37 +45,39 @@ document.addEventListener('turbolinks:load', () => {
   })
   secondButton.forEach((button) => {
     button.addEventListener('click', (event) => {
-      if (button.dataset.recyclability == 0) {
+      console.log('Hello world', button.dataset.recyclability)
+      if (button.dataset.recyclability == 0.0) {
         confetti.render();
         Swal.fire ({
-          icon: 'Good job!',
+          icon: 'success',
           title: 'You go that right!',
-          text: 'success'
+
         })
         document.querySelector('.swal2-confirm').addEventListener('click', (event) => {
           // confetti.clear()
           location.reload()
         })
       } else {
+        confetti.render();
         Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'You got that one wrong!',
+          icon: 'success',
+          title: 'You go that right!'
+        })
+        document.querySelector('.swal2-confirm').addEventListener('click', (event) => {
+          // confetti.clear()
+          location.reload()
         })
       }
     })
   })
   orangeButton.forEach((button) => {
     button.addEventListener('click', (event) => {
-      console.log(orangeButton)
       console.log(button.dataset.recyclability)
-      console.log(button.dataset.recyclability > 0 && button.dataset.recyclability < 100)
-      if (button.dataset.recyclability > 0 && button.dataset.recyclability < 100) {
+      if (button.dataset.recyclability == 50.0) {
         confetti.render();
         Swal.fire ({
-          icon: 'Good job!',
-          title: 'You go that right!',
-          text: 'success'
+          icon: 'success',
+          title: 'You go that right!'
         })
         document.querySelector('.swal2-confirm').addEventListener('click', (event) => {
           // confetti.clear()
