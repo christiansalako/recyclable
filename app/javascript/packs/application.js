@@ -79,6 +79,7 @@ document.addEventListener('turbolinks:load', () => {
       console.log(button.dataset.recyclability)
       if (button.dataset.recyclability == 50.0) {
         confettiElement.style.display = 'block';
+        document.querySelector('.carouselbg').style.background = 'transparent';
         confetti.render();
         Swal.fire ({
           icon: 'success',
