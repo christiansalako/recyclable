@@ -287,6 +287,9 @@ h2{
   top: 8px;
   right: 8px;
   padding: unset;
+  &:focus {
+    color: black;
+  }
 }
 
 .images {
