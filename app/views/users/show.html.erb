@@ -1,5 +1,7 @@
-<% if current_user.producer? %>
-    <%= render "producer" %>
-<% else %>
-    <%= render "consumer" %>
-<% end %>
+<div class="consumer-page" style="background-image: url(<%=  asset_path('homepage.png') %>); background-size: cover; background-position: center; height: 100vh;" >
+  <% if current_user.producer? %>
+      <%= render "producer" %>
+  <% else %>
+      <%= render "consumer" %>
+  <% end %>
+</div>
