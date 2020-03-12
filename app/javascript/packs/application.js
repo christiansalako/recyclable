@@ -37,7 +37,7 @@ document.addEventListener('turbolinks:load', () => {
       if (button.dataset.recyclability == 0) {
         Swal.fire ({
           icon: 'Good job!',
-          title: 'You clicked the button!',
+          title: 'You go that right!',
           text: 'success'
         })
       } else {
@@ -52,9 +52,10 @@ document.addEventListener('turbolinks:load', () => {
   orangeButton.forEach((button) => {
     button.addEventListener('click', (event) => {
       if (button.dataset.recyclability > 0 && button.dataset.recyclability < 100) {
+        console.log(button.dataset.recyclability)
         Swal.fire ({
           icon: 'Good job!',
-          title: 'You clicked the button!',
+          title: 'You go that right!',
           text: 'success'
         })
       } else {
