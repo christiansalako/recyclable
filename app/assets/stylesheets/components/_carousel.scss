@@ -20,8 +20,8 @@
 }
 
 .game-text{
-font-family: 'Luckiest Guy', cursive;
-color: #d65555;
+font-family: Reem Kufi;
+color: black;
 }
 
 .recyclable-message-game  {
@@ -54,4 +54,25 @@ color: #d65555;
 #orange-icon {
   color:orange;
 }
+
+.carouselbg{
+  background: white;
+  margin-top: 141px;
+  border-radius: 20px;
+  padding-top: 26px;
+}
+
+#my-canvas {
+  display: none;
+}
+
+#instructions-game{
+  margin-top: 34px;
+  width: 80%;
+  box-shadow: 0 6px 14px 0 #666;
+  border: none;
+}
+
+
+
 
