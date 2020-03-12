@@ -22,6 +22,8 @@ document.addEventListener('turbolinks:load', () => {
   greenButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
       if (button.dataset.recyclability == 100) {
+        confettiElement.style.display = 'block';
+        document.querySelector('.carouselbg').style.background = 'transparent';
         confetti.render();
         Swal.fire ({
           icon: 'success',
