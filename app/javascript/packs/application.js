@@ -52,7 +52,7 @@ document.addEventListener('turbolinks:load', () => {
         confetti.render();
         Swal.fire ({
           icon: 'success',
-          title: 'You go that right!',
+          title: 'You got that right!',
 
         })
         document.querySelector('.swal2-confirm').addEventListener('click', (event) => {
@@ -65,7 +65,7 @@ document.addEventListener('turbolinks:load', () => {
         // confetti.render();
         Swal.fire({
           icon: 'error',
-          title: 'You go that wrong!!!!!'
+          title: 'You got that wrong!!!!!'
         })
         document.querySelector('.swal2-confirm').addEventListener('click', (event) => {
           // confetti.clear()
@@ -83,7 +83,7 @@ document.addEventListener('turbolinks:load', () => {
         confetti.render();
         Swal.fire ({
           icon: 'success',
-          title: 'You go that right!'
+          title: 'You got that right!'
         })
         document.querySelector('.swal2-confirm').addEventListener('click', (event) => {
           // confetti.clear()
